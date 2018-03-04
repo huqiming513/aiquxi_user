@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <title>优惠券</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/zepto.js"></script>
+    <script src="js/template.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="css/address.css">
+    <script src="js/common.js"></script>
+</head>
+<body style="background-color: rgba(255,255,255,0)" >
+<div style="height: 50%">
+
+    <img src="http://iquxi.oss-cn-shanghai.aliyuncs.com/img/hongbao_bg.jpg" width="100%">
+</div>
+
+
+<div class="container text-center area jianbian " >
+
+    <input  name="mobile" id="mobile" type="text" class="form-control" placeholder="输入手机号立享新用户券" required >
+
+    <br>
+    <br>
+        <button id="lingqu" class="btn btn-default btn-primary btn-block" onclick="recevive()">立即领取</button>
+    <div hidden id="xiadan">
+        <br>
+        <a href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxb4aa8e6e4549309d&redirect_uri=https%3A%2F%2Fwww.aiquxi.net%2Fapptest&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect" class="btn btn-default btn-primary btn-block" >立即下单</a>
+    </div>
+    <br>
+    <a>活动规则</a>
+</div>
+
+
+
+
+
+</body>
+<script>
+    $("html").height($(window).height());
+    function recevive() {
+
+        var getorder={
+            url:'/api/receive/coupon',
+            type:'post',
+            data:{"mobile":$("#mobile").val()},
+            tokenFlag:false,
+            sCallback:function(res){
+                console.log(res)
+                if(res.msg=="ok"){
+                    alert("领取成功！请前往爱趣洗公众号下单使用")
+                    $("#xiadan").show();
+                    $("#lingqu").hide();
+                }else {
+                    alert(res.msg)
+                }
+            },
+            eCallback:function(e){
+                //     showTip(e)
+            }
+        };
+        window.base.getData(getorder);
+    }
+</script>
+</html>

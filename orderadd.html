@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <title>预约取件</title>
+    <link rel="stylesheet" type="text/css" href="css/orderadd.css">
+    <script type="text/javascript" src="js/zepto.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/template.js"></script>
+    <script src="js/common.js"></script>
+</head>
+<body>
+<header></header>
+<!--<section id="category-part">-->
+    <!--<div id="category-list">-->
+
+    <!--</div>-->
+<!--</section>-->
+<section id="list">
+    <div class="clothes-list">
+        <div class="title" style="text-align: center;padding: 5px">订单信息</div>
+        <ul id="product-list">
+
+
+        </ul>
+    </div>
+</section>
+
+<section id="address-part">
+
+</section>
+
+<section id="time-part">
+    <div class="timeinput">请选择取件时间</div>
+    <div class="timeinput">
+        <select class="washing washing_date">
+            <option value="">请选择日期</option>
+
+        </select>
+        <select class="washing washing_time">
+            <option value="">请选择时间</option>
+
+        </select>
+    </div>
+
+</section>
+<section id="guest-part">
+        <textarea placeholder="如果有问题请备注留言">
+        </textarea>
+</section>
+<section id="delivery-part">
+   <!--模板渲染 -->
+    <ul>
+
+        <li>
+
+            <div class="sub-delivery clearfix">
+                <div><p>洗衣</p>
+
+                    <p>运费</p></div>
+
+                <div>
+                    <p>不满35.0元</p>
+
+                    <p class="blue">10.0元运费</p>
+                </div>
+
+                <div class="vertical-line"></div>
+
+
+                <div>
+                    <p>满35.0元</p>
+
+                    <p class="blue">免运费</p>
+                </div>
+
+
+            </div>
+
+        </li>
+
+    </ul>
+</section>
+<footer>
+    <div class="disabled">立即预约</div>
+</footer>
+<div class="loader" style="display: none;"><span class="mask"></span>加载中...</div>
+<section id="dialog"></section>
+<!-- tips banner -->
+<script id="tips" type="text/html">
+    {{if data.order_tips.details !== ""}}
+    <div class="tips">
+        <img src="{{order_tips.background_image}}">
+
+        <div class="wrapline">
+            <div class="outter">
+                <div class="tablecell">
+                    {{each order_tips.details as item}}
+                    <span>{{item}}</span>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/if}}
+</script>
+
+<!--
+商品列表
+-->
+<script id="product-tem" type="text/html">
+    {{if washing ==undefined}}
+    <span>您没有选择任何衣物</span>
+    {{else}}
+    {{each washing as item}}
+    {{if item.selected}}
+    <li>
+        <div class="content-wrap">
+            <div class="content">
+                <div class="pic-box">
+                    <img src="{{item.image}}">
+                </div>
+                <div class="info-box"> <span class="clothes-name">{{item.washing_name}}</span>
+                    <span>￥</span>
+                    <span>{{item.price}}</span></div>
+                <div class="count-box"><span>数量：{{item.order}}</span></div>
+            </div>
+        </div>
+    </li>
+    {{/if}}
+    {{/each}}
+    {{/if}}
+</script>
+
+<!-- 地址栏 -->
+<script id="address-wrap" type="text/html">
+    <div id="address">
+        <div class="addborder"></div>
+
+
+        <div class="address-content" data-id="">
+            {{if address !== ""}}
+            <p><span class="name">{{address.username}}</span><span class="tel">{{address.tel}}</span></p>
+
+            <p>{{address.address}}</p>
+            {{else}}
+            <p class="add-address">添加/选择地址</p>
+            {{/if}}
+            <div class="arrow-left"></div>
+        </div>
+        <div class="addborder"></div>
+    </div>
+</script>
+
+<!-- 合单运费 -->
+<script id="total-delivery-wrap" type="text/html">
+    {{if total.length < 5}}
+    <div class="total-delivery clearfix">
+        <div class="title"><p>关于</p>
+
+            <p>运费</p></div>
+        {{each total as item index}}
+        <div class="delivery">
+            <p>{{item.sentinel_min}}</p>
+
+            <p class="blue">{{item.fee}}</p>
+        </div>
+        {{if index < total.length - 1}}
+        <div class="vertical-line"></div>
+        {{/if}}
+        {{/each}}
+    </div>
+    {{else}}
+    <div class="total-delivery five cleanfix">
+        <p>关于运费</p>
+        <ul>
+            {{each total as item}}
+            <li>
+                <div>
+                    <p>{{item.sentinel_min}}</p>
+
+                    <p class="blue">{{item.fee}}</p>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+    {{/if}}
+</script>
+
+<!-- 分品类运费 (运费有五级时倒序为免运费到高运费)-->
+<script id="sub-delivery-wrap" type="text/html">
+    <ul>
+        {{each sub as item}}
+        <li>
+            {{if item.delivery_fee.length <= 4}}
+            <div class="sub-delivery clearfix">
+                <div><p>{{item.category_name}}</p>
+
+                    <p>运费</p></div>
+                {{each item.delivery_fee as subitem index}}
+                <div>
+                    <p>{{subitem["sentinel_min"]}}</p>
+
+                    <p class="blue">{{subitem["fee"]}}</p>
+                </div>
+                {{if index < item.delivery_fee.length - 1 }}
+                <div class="vertical-line"></div>
+                {{/if}}
+                {{/each}}
+            </div>
+            {{else}}
+            <div class="sub-delivery-fiveitem">
+                <p>{{item.category_name}}运费</p>
+                <ul>
+                    {{each item.delivery_fee as subitem subindex}}
+                    <li>
+                        <div>
+                            <p>{{subitem["sentinel_min"]}}</p>
+
+                            <p class="blue">{{subitem["fee"]}}</p>
+                        </div>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+            {{/if}}
+        </li>
+        {{/each}}
+    </ul>
+
+</script>
+
+<!-- 确认弹框 -->
+<script id="alert-dialog-wrap" type="text/html">
+    <div id="alert-dialog" style="display: none;">
+        <div class="wx_mask"></div>
+        <div class="wx_confirm alert-dialog">
+            <div class="head">{{tips.title}}</div>
+            <div class="body">{{tips.content}}</div>
+            <div class="i-know-btn">我知道了</div>
+        </div>
+    </div>
+</script>
+
+<script>
+    var token=window.base.getLocalStorage("token")
+    var account= window.base.getLocalStorage("account")
+    if(token!="" && account!=""){
+
+    }else {
+        window.location.href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxb4aa8e6e4549309d&redirect_uri=https%3A%2F%2Fwww.aiquxi.net%2Fapptest%2Flogin.html&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect";
+    }
+
+    var orderPlaceData = {};
+    orderPlaceData.products=[]
+    function getSearchParams() {
+        var params = {};
+        var chunks = location.search.substr(1).split(/&/g);
+        for (var i = 0; i < chunks.length; i++) {
+            // 存储整个页面的数据
+            try {
+                var items = chunks[i].split('=', 2);
+                var key = items[0];
+                var value = decodeURIComponent(items[1]);
+                params[key] = value;
+            }
+            catch (ex) {
+            }
+        }
+        return params;
+    }
+
+    var params = [];
+    params.url = getSearchParams();
+    var storage = window.sessionStorage;
+    var productInfo = JSON.parse(storage.getItem("productInfo"));
+
+    function renderTemplate() {
+        var producthtml= template("product-tem",productInfo)
+        var n=0;
+        var i=0
+    //渲染产品列表
+        if( productInfo !== null){
+            $.each(productInfo.washing, function(i, item){
+                if (item.selected){
+                    //orderPlaceData.product.push("product_id":item.id,)
+                    orderPlaceData.products[n]=item;
+                    n=n+1;
+                    // alert(item.id+ "  "+item.order)
+                }
+                console.log(orderPlaceData.products)
+
+            });
+        }
+        $("#product-list").html(producthtml)
+
+        // 渲染地址栏
+        var defauladdress=window.base.getLocalStorage("address")
+        if (!defauladdress) {
+            var addressHtml = template("address-wrap", {"address": defauladdress});
+            //   console.log(orderPlaceData)
+            $("#address-part").html(addressHtml);
+        }else{
+            if (!params.url.address_index) {
+                // 默认地址
+                //    console.log(defauladdress)
+                var address = defauladdress[0].detail;
+                if (address.length > 22) {
+                    address = address.substring(0, 21) + "...";
+                }
+                orderPlaceData.addid = defauladdress[0].id;
+                orderPlaceData.address = address;
+                orderPlaceData.username = defauladdress[0].name;
+                orderPlaceData.tel = defauladdress[0].mobile;
+                var addressHtml = template("address-wrap", {"address": orderPlaceData});
+                //   console.log(orderPlaceData)
+                $("#address-part").html(addressHtml);
+            }
+            else {
+                // 选择或填充的地址
+                var address = defauladdress[params.url.address_index].detail;
+                if (address.length > 22) {
+                    address = address.substring(0, 21) + "...";
+                }
+                orderPlaceData.addid = defauladdress[params.url.address_index].id;
+                orderPlaceData.address = address;
+                orderPlaceData.username = defauladdress[params.url.address_index].name;
+                orderPlaceData.tel = defauladdress[params.url.address_index].mobile;
+                var addressHtml = template("address-wrap", {"address": orderPlaceData});
+                //   console.log(orderPlaceData)
+                $("#address-part").html(addressHtml);
+                params.select_address = true;
+            }
+        }
+        // 填充时间
+        if ($(".washing_date").val() && $(".washing_time").val()) {
+            orderPlaceData.washing_date=$(".washing_date").val();
+            orderPlaceData.washing_time=$(".washing_time").val();
+            orderPlaceData.time=orderPlaceData.washing_date+orderPlaceData.washing_time
+
+        }
+
+        // 填充留言
+        if (params.comment) {
+            $("#guest-part textarea").val(params.comment);
+            orderPlaceData.comment = params.comment;
+        }
+        else {
+            $("textarea").val("");
+        }
+
+    }
+
+    function bindEvent() {
+
+        $("#address-part").on("click", "#address", function () {
+
+            window.location.href = "address.html?from=order";
+        })
+        $("footer div").on("click", function () {
+
+            var product_list =new Array()
+            orderPlaceData.washing_date=$(".washing_date").val();
+            orderPlaceData.washing_time=$(".washing_time").val();
+            orderPlaceData.time=orderPlaceData.washing_date+" "+orderPlaceData.washing_time
+            orderPlaceData.des=$("#guest-part textarea").val() || "";
+            var info_order = {};
+            for(i=0;i<orderPlaceData.products.length;i++){
+                var product=new Object()
+                product.product_id=orderPlaceData.products[i].id;
+                product.count=orderPlaceData.products[i].order
+                product_list[i]=product
+            }
+            info_order.add_id = orderPlaceData.addid;
+            info_order.time = orderPlaceData.time;
+            info_order.products=product_list;
+            info_order.des = $("#guest-part textarea").val() || "";
+
+            //转换成json字符串
+          var info =  JSON.stringify(info_order)
+            console.log(info)
+
+            if (!orderPlaceData.addid || !$(".washing_date").val() || !$(".washing_time").val()) {
+                return;
+            }
+
+            // 立即预约按钮置灰，防止多次点击
+            $("footer div").addClass("disabled");
+//
+          //  var list_order=$.parseJSON(info_order);
+        //    console.log(list_order)
+            var addorder={
+                url:'api/order/send',
+                type:'post',
+                data:info,
+                data_type:true,
+                tokenFlag:true,
+                sCallback:function(res){
+                    if(res.msg==undefined){
+                        console.log(res)
+                        window.sessionStorage.removeItem("productInfo")
+                        window.location.href ="order.html";
+
+                    }else {
+                        myalert(res.msg)
+                    }
+                },
+                eCallback:function(e){
+                    //  showTip(e)
+                }
+            };
+            window.base.getData(addorder);
+
+
+        })
+    }
+
+    var date_current
+    var time_current
+    var date = new Date();
+    Y = date.getFullYear();
+    M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1);
+    D = date.getDate();
+    d = date.getDate();
+    h = date.getHours();
+    m = date.getMinutes();
+    s = date.getSeconds();
+ //   console.log(Y+M+D+h+m+s); //呀麻碟
+    // 输出结果：2014-04-23 18:55:49
+    date_current =M+"月"+d+"日";
+   // console.log(date_current)
+    $(".washing_date option").remove();
+    $(".washing_date").append("<option value=>请选择日期</option>");
+    for(var i=0;i<7;i++){
+        var str=  M+"月"+d+"日"
+
+        if(d>30) {
+            d=1
+            M=1
+        }else{
+            d=d+1
+        }
+          $(".washing_date").append("<option value="+str+">"+str+"</option>");
+      }
+
+
+    $(".washing").change(function(){
+        if (orderPlaceData.addid && $(".washing_date").val() && $(".washing_time").val()) {
+            $("footer div").removeClass("disabled");
+        }else {
+            $("footer div").addClass("disabled");
+        }
+
+    });
+
+$(".washing_date").change(function(){
+if ($(".washing_date").val()!=date_current){
+    $(".washing_time option").remove();
+    $(".washing_time").append("<option value='9:00-10:00'>9:00-10:00</option>");
+    $(".washing_time").append("<option value='10:00-11:00'>10:00-11:00</option>");
+    $(".washing_time").append("<option value='11:00-12:00'>11:00-12:00</option>");
+    $(".washing_time").append("<option value='12:00-13:00'>12:00-13:00</option>");
+    $(".washing_time").append("<option value='13:00-14:00'>13:00-14:00</option>");
+    $(".washing_time").append("<option value='14:00-15:00'>14:00-15:00</option>");
+    $(".washing_time").append("<option value='15:00-16:00'>15:00-16:00</option>");
+    $(".washing_time").append("<option value='16:00-17:00'>16:00-17:00</option>");
+    $(".washing_time").append("<option value='17:00-18:00'>17:00-18:00</option>");
+    $(".washing_time").append("<option value='18:00-19:00'>18:00-19:00</option>");
+    $(".washing_time").append("<option value='19:00-20:00'>19:00-20:00</option>");
+    $(".washing_time").append("<option value='20:00-21:00'>20:00-21:00</option>");
+}else if(h<9){
+    $(".washing_time option").remove();
+    $(".washing_time").append("<option value='尽快取'>尽快取</option>");
+    $(".washing_time").append("<option value='10:00-11:00'>10:00-11:00</option>");
+    $(".washing_time").append("<option value='11:00-12:00'>11:00-12:00</option>");
+    $(".washing_time").append("<option value='12:00-13:00'>12:00-13:00</option>");
+    $(".washing_time").append("<option value='13:00-14:00'>13:00-14:00</option>");
+    $(".washing_time").append("<option value='14:00-15:00'>14:00-15:00</option>");
+    $(".washing_time").append("<option value='15:00-16:00'>15:00-16:00</option>");
+    $(".washing_time").append("<option value='16:00-17:00'>16:00-17:00</option>");
+    $(".washing_time").append("<option value='17:00-18:00'>17:00-18:00</option>");
+    $(".washing_time").append("<option value='18:00-19:00'>18:00-19:00</option>");
+    $(".washing_time").append("<option value='19:00-20:00'>19:00-20:00</option>");
+    $(".washing_time").append("<option value='20:00-21:00'>20:00-21:00</option>");
+}
+else {
+    $(".washing_time").append("<option value='尽快取'>尽快取</option>");
+ // console.log(h)
+    h=h+1
+    if (h<21){
+        for (i=0;i<22-h;i++){
+            h=h+1
+            str="<option value="+h+":00-"+(h+1)+":00>"+h+":00-"+(h+1)+":00</option>"
+            $(".washing_time").append(str);
+        }
+    }else {
+        $(".washing_time option").remove();
+        $(".washing_time").append("<option value=''>今天预约已满</option>");
+    }
+}
+
+
+})
+
+    /**
+     * 限制50字数
+     */
+    var oldStr;
+    $("#guest-part textarea").on("input propertychange", function () {
+        var str = $("#guest-part textarea").val();
+        var str = str.replace(/^(\u3000|\s|\t|\u00A0)*|(\u3000|\s|\t|\u00A0)*$/g, "");
+        var aMatch = str.match(/[^\x00-\x80]/g);
+        var len = Math.ceil((str.length + (!aMatch ? 0 : aMatch.length)) / 2);
+        if (len <= 50) {
+            oldStr = str;
+        }
+        else {
+            $("#guest-part textarea").val(oldStr)
+        }
+    })
+
+    /**
+     * 提示框
+     * @param  {string} title   标题
+     * @param  {string} content 内容
+     */
+    function myalert(title, content) {
+        var alertHtml = template("alert-dialog-wrap", {"tips": {"title": title, "content": content}});
+        $("#dialog").html(alertHtml);
+        $("#alert-dialog").show();
+
+        $("#dialog").on("click", ".i-know-btn", function (e) {
+            $("#alert-dialog").hide();
+        })
+    }
+</script>
+<script type="text/javascript">
+    var getadd={
+        url:'api/userAddress/address/get',
+        type:'get',
+        data:"",
+        tokenFlag:true,
+        sCallback:function(res){
+            if(res.msg=="查询的地址不存在"){
+                window.base.deleteLocalStorage("address")
+            }else {
+                window.base.deleteLocalStorage("address")
+                window.base.setLocalStorage("address",res);
+                // 渲染数据
+            }
+            renderTemplate();
+            // 绑定事件
+            bindEvent();
+        },
+        eCallback:function(e){
+        }
+    };
+    window.base.getData(getadd);
+
+</script>
+
+</body>
+</html>

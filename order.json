@@ -1,0 +1,160 @@
+{
+  "ret": true,
+  "ts": 1513932645,
+  "version": "1.0",
+  "data": {
+    "order_page_info": {
+      "title": "\u4e13\u4e1a\u6e05\u6d17",
+      "success_description": "\u9884\u7ea6\u6210\u529f\u8bf7\u7b49\u5f85\u5c0fe\u4e0a\u95e8\u53d6\u4ef6",
+      "categories": [
+        {
+          "category_id": 1010,
+          "category_name": "\u6d17\u8863"
+        },
+        {
+          "category_id": 1020,
+          "category_name": "\u6d17\u978b"
+        },
+        {
+          "category_id": 1011,
+          "category_name": "\u6d17\u5bb6\u7eba"
+        },
+        {
+          "category_id": 1030,
+          "category_name": "\u6d17\u7a97\u5e18"
+        },
+        {
+          "category_id": 1070,
+          "category_name": "\u888b\u6d17"
+        }
+      ],
+      "default_address": [{
+        "address_id": 5100682,
+        "username": "\u5f20\u6bc5\u6ce2",
+        "tel": "18002045205",
+        "city": "\u5929\u6d25",
+        "city_id": 4,
+        "area": "\u5317\u8fb0\u533a",
+        "area_id": 35,
+        "address": "\u53cc\u53e3\u9547\u627f\u5b5d\u8def\u6cb3\u5317\u5de5\u4e1a\u5927\u5b66\u5317\u8fb0\u6821\u533a \u6559\u5e08\u516c\u5bd3",
+        "address_line_1": "\u53cc\u53e3\u9547\u627f\u5b5d\u8def\u6cb3\u5317\u5de5\u4e1a\u5927\u5b66\u5317\u8fb0\u6821\u533a",
+        "address_line_2": "\u6559\u5e08\u516c\u5bd3",
+        "available_category_ids": [
+          1,
+          1010,
+          1011,
+          2,
+          1020,
+          3,
+          1030,
+          7,
+          1070
+        ]
+      },{
+        "address_id": 5100682,
+        "username": "\u5f20\u6bc5\u6ce2",
+        "tel": "18002045205",
+        "city": "\u5929\u6d25",
+        "city_id": 4,
+        "area": "\u5317\u8fb0\u533a",
+        "area_id": 35,
+        "address": "\u53cc\u53e3\u9547\u627f\u5b5d\u8def\u6cb3\u5317\u5de5\u4e1a\u5927\u5b66\u5317\u8fb0\u6821\u533a \u6559\u5e08\u516c\u5bd3",
+        "address_line_1": "\u53cc\u53e3\u9547\u627f\u5b5d\u8def\u6cb3\u5317\u5de5\u4e1a\u5927\u5b66\u5317\u8fb0\u6821\u533a",
+        "address_line_2": "\u6559\u5e08\u516c\u5bd3",
+        "available_category_ids": [
+          1,
+          1010,
+          1011,
+          2,
+          1020,
+          3,
+          1030,
+          7,
+          1070
+        ]
+      }],
+      "order_tips": {
+        "background_image": "https:\/\/cdnopen.edaixi.com\/app_resources\/shopping_tip_bg@2x.png",
+        "details": []
+      },
+      "delivery_fee_info": {
+        "total": [
+          {
+            "sentinel_min": "\u6ee140.0\u5143",
+            "fee": "\u514d\u8fd0\u8d39"
+          },
+          {
+            "sentinel_min": "\u4e0d\u6ee140.0\u5143",
+            "fee": "10.0\u5143"
+          }
+        ],
+        "sub": [
+          {
+            "category_id": 1010,
+            "category_name": "\u6d17\u8863",
+            "delivery_fee": [
+              {
+                "sentinel_min": "\u6ee140.0\u5143",
+                "fee": "\u514d\u8fd0\u8d39"
+              },
+              {
+                "sentinel_min": "\u4e0d\u6ee140.0\u5143",
+                "fee": "10.0\u5143"
+              }
+            ]
+          },
+          {
+            "category_id": 1020,
+            "category_name": "\u6d17\u978b",
+            "delivery_fee": [
+              {
+                "sentinel_min": "\u6ee140.0\u5143",
+                "fee": "\u514d\u8fd0\u8d39"
+              },
+              {
+                "sentinel_min": "\u4e0d\u6ee140.0\u5143",
+                "fee": "10.0\u5143"
+              }
+            ]
+          },
+          {
+            "category_id": 1011,
+            "category_name": "\u6d17\u5bb6\u7eba",
+            "delivery_fee": [
+              {
+                "sentinel_min": "\u6ee140.0\u5143",
+                "fee": "\u514d\u8fd0\u8d39"
+              },
+              {
+                "sentinel_min": "\u4e0d\u6ee140.0\u5143",
+                "fee": "10.0\u5143"
+              }
+            ]
+          },
+          {
+            "category_id": 1030,
+            "category_name": "\u6d17\u7a97\u5e18",
+            "delivery_fee": [
+              {
+                "sentinel_min": "\u5168\u573a",
+                "fee": "\u514d\u8fd0\u8d39"
+              }
+            ]
+          },
+          {
+            "category_id": 1070,
+            "category_name": "\u888b\u6d17",
+            "delivery_fee": [
+              {
+                "sentinel_min": "\u5168\u573a",
+                "fee": "\u514d\u8fd0\u8d39"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "select_addr_url": "\/mobile.php?m=wap&act=address&do=order_address_list&link_from=comm_order_place&back=%252Fnew_weixin%252Fview%252Forder_place.html%253Fcity_id%253D4%2526mark%253D150969011059fc0afef17ed%2526price_read%253D1&city_id=4&mark=150969011059fc0afef17ed",
+    "submit_url": "\/mobile.php?m=wap&act=homepage&do=do_order&city_id=4&mark=150969011059fc0afef17ed"
+  }
+}

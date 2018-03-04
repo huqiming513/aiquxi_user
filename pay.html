@@ -1,0 +1,201 @@
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+
+    <title>支付页面</title>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/common.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/zepto.js"></script>
+    <script src="js/template.js"></script>
+    <script type="text/html" id="order_info_tem">
+        <tbody>
+        <tr><td>订单编号：{{orderdata.order_no}}</td></tr>
+        <tr><td>订单价格：￥{{orderdata.total_price}}</td></tr>
+        <tr><td>衣物总数：{{orderdata.total_count}}</td></tr>
+
+        <tr><td>物流状态：{{orderdata.status.status}}</td>  </tr>
+        <tr><td>运费：满35免运费、低于35加10元运费</td>  </tr>
+        </tbody>
+    </script>
+    <script type="text/html" id="yhq_tem">
+        {{if yhqdata != ""}}
+        {{ each yhqdata as item index}}
+        {{if item.limit <= total_price}}
+        <option value="{{item.code}}">{{item.coupon_name.name}}</option>
+        {{else}}
+        <option disabled value="{{item.code}}">{{item.coupon_name.name+"(不可用)"}}</option>
+        {{/if}}
+        {{/each}}
+        <option value="">不使用优惠券</option>
+        {{else}}
+        <option value="">无可用优惠券</option>
+        {{/if}}
+    </script>
+</head>
+<body>
+<div class="top h3 text-center">支付订单</div>
+<div class="container">
+<div class="row">
+
+    <div class="col-xs-12 col-sm-12 text-center">
+
+
+            <table class="table table-striped" id="order_info">
+
+            </table>
+
+            <div class="form-group">
+            <div class="input-group">
+                <span class="input-group-addon">请选择优惠券</span>
+                <select class="form-control" id="yhq">
+                <option value="">无可用优惠券</option>
+                </select>
+            </div>
+            </div>
+
+        <div class="btn-group" >
+            <button class="btn btn-default btn-primary" onclick="offeroder()">立即支付</button>
+        </div>
+    </div>
+
+</div>
+</div>
+<script>
+
+    function getSearchParams() {
+        var params = {};
+        var chunks = location.search.substr(1).split(/&/g);
+        for (var i = 0; i < chunks.length; i++) {
+            // 存储整个页面的数据
+            try {
+                var items = chunks[i].split('=', 2);
+                var key = items[0];
+                var value = decodeURIComponent(items[1]);
+                params[key] = value;
+            }
+            catch (ex) {
+            }
+        }
+        return params;
+    }
+
+    var param = getSearchParams();
+    // console.log(param)
+</script>
+
+<script type="text/javascript">
+    //调用微信JS api 支付
+   // window.base.setLocalStorage("token","50969348eb076b813e3ccd87e576516f")
+    var offerdata;
+    var orderdata;
+    var coupondata;
+    var getorder={
+        url:'api/order/select/'+getSearchParams().id,
+        type:'get',
+        data:"",
+        tokenFlag:false,
+        sCallback:function(res){
+            if(res){
+                orderdata=res[0]
+                var order_info_html=template("order_info_tem",{"orderdata":orderdata})
+                $("#order_info").html(order_info_html)
+                console.log(res)
+            }else {
+                alert("获取订单信息失败")
+            }
+        },
+        eCallback:function(e){
+            //     showTip(e)
+        }
+    };
+    window.base.getData(getorder);
+
+            var getcoupon={
+                url:'api/get/coupon',
+                type:'get',
+                data:"",
+                tokenFlag:true,
+                sCallback:function(res){
+                    if(res.msg == undefined){
+                        console.log(res)
+                       var yhq_html=template("yhq_tem",{"yhqdata":res,"total_price": orderdata.total_price})
+                            $("#yhq").html(yhq_html)
+                             yhqpd()
+                    }else {
+                    alert(res.msg)
+                    }
+                },
+                eCallback:function(e){
+                    //     showTip(e)
+                }
+            };
+            window.base.getData(getcoupon);
+function yhqpd() {
+
+}
+    function onBridgeReady(offerdata) {
+        WeixinJSBridge.invoke(
+            'getBrandWCPayRequest',
+            offerdata,
+            function (res) {
+                if (res.err_msg == "get_brand_wcpay_request:ok") {
+                    alert('支付成功');
+                    history.back();
+                }     // 使用以上方式判断前端返回,微信团队郑重提示:res.err_msg将在用户支付成功后返回    ok，但并不保证它绝对可靠。
+                if (res.err_msg == "get_brand_wcpay_request:cancel") {
+                    alert('取消支付');
+                    history.back();
+                }
+            }
+        );
+    }
+
+    function callpay() {
+        if (typeof WeixinJSBridge == "undefined") {
+            if (document.addEventListener) {
+                document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+            } else if (document.attachEvent) {
+                document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+                document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+            }
+        } else {
+            onBridgeReady(offerdata);
+        }
+    }
+</script>
+<script type="text/javascript">
+    function offeroder() {
+        ordersubdata ={"id":getSearchParams().id,"coupon":$("#yhq").val()}
+        var params={
+            url:'api/pay/pre_order',
+            type:'post',
+            data:JSON.stringify(ordersubdata),
+            data_type:true,
+            tokenFlag:true,
+            sCallback:function(res){
+                if(res){
+                    offerdata=res
+                     console.log(res)
+                    callpay()
+                }else {
+                    alert("获取支付信息失败")
+                }
+            },
+            eCallback:function(e){
+                //     showTip(e)
+            }
+        };
+        window.base.getData(params);
+    }
+
+</script>
+
+</body>
+</html>

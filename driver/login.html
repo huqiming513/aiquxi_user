@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <title>登录</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/login.css">
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/common.js"></script>
+</head>
+<body>
+<div class="main">
+    <img src="img/logo.png">
+    <div class="form-signin">
+        <input type="text" id="tel" class="form-control" placeholder="账号" required autofocus />
+        <input type="password" id="pwd" class="form-control" placeholder="密码" required />
+        <button class="btn btn-lg btn-warning btn-block" onclick="submits()">登录</button>
+
+        <!--<div class="regist"><a href="regist.html">修改密码</a></div>-->
+    </div>
+</div>
+
+
+<script>
+
+
+function submits() {
+
+    var login_info={ac:$("#tel").val(),se:$("#pwd").val()}
+    var login={
+        url:'del/delivery/token/get',
+        type:'post',
+        data:JSON.stringify(login_info),
+        data_type:true,
+        tokenFlag:false,
+        sCallback:function(res){
+            if(res.msg==undefined){
+                console.log(res)
+                window.base.setLocalStorage("drtoken",res.token)
+                window.location.href ="index.html";
+
+            }else {
+                alert(res.msg)
+            }
+        },
+        eCallback:function(e){
+            //  showTip(e)
+        }
+    };
+    window.base.getData(login);
+}
+</script>
+
+</body>
+</html>

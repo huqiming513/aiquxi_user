@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <title>优惠券</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/zepto.js"></script>
+    <script src="js/template.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/common.js"></script>
+
+    <script type="text/html" id="yhq_tem">
+        {{if yhqdata != ""}}
+        {{ each yhqdata as item index}}
+
+        <a class="order_link" href="category.html">
+            <img class="img-rounded" src="http://iquxi.oss-cn-shanghai.aliyuncs.com/banner/yhq.png" width="100%">
+        </a>
+        <br>
+        <br>
+        {{/each}}
+        {{else}}
+        <div class="text-center">
+
+            <h4 style="color: red">无可用优惠券!</h4>
+        </div>
+        {{/if}}
+    </script>
+</head>
+<body>
+<div class="top h3 text-center">优惠券详情</div><br>
+<div class="container" id="yhq" >
+
+
+</div>
+<script>
+    var token=window.base.getLocalStorage("token")
+    var account= window.base.getLocalStorage("account")
+         if((token!="") && (account!="")){
+    var getcoupon={
+        url:'api/get/coupon',
+        type:'get',
+        data:"",
+        tokenFlag:true,
+        sCallback:function(res){
+            if(res.msg == undefined){
+                console.log(res)
+                var yhq_html=template("yhq_tem",{"yhqdata":res})
+                $("#yhq").html(yhq_html)
+                yhqpd()
+            }else {
+                alert(res.msg)
+            }
+        },
+        eCallback:function(e){
+            //     showTip(e)
+        }
+    };
+    window.base.getData(getcoupon);
+          }else {
+              window.location.href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxb4aa8e6e4549309d&redirect_uri=https%3A%2F%2Fwww.aiquxi.net%2Fapptest%2Flogin.html&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect";
+         }
+</script>
+</body>
+</html>

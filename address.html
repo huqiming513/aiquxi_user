@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <title>地址管理</title>
+    <script src="js/zepto.js"></script>
+    <script src="js/template.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="css/address.css">
+    <script src="js/common.js"></script>
+</head>
+<body>
+
+<body style="padding-bottom:60px;">
+<div class="p5"></div>
+<div id="addr_wrap">
+    <div id="all_address">
+        <div data-role="content" class="content">
+
+
+        </div>
+        <div style="height:90px;color:#8a8a8a;text-align:right;padding:14px">左划列表可删除地址</div>
+    </div>
+</div>
+
+<script id="address_box" type="text/html">
+    {{each address as item index}}
+    <table class="order-place-table swipe-delete" cellpadding="0" cellspacing="0" data-role="listview">
+        <tbody>
+        <tr id="address_list_{{item.id}}" class="address_list">
+            <td style="width:20px;background:#fff"></td>
+            <td style="padding:0 0px">
+                <div class="ui-btn ui-icon-carat-r edit-btn open" onclick="select_address({{index}})"
+                     style="left: 0px;">
+                    <div>
+                        <span ontouchstart="" class="bigf address_text">{{item.name}}</span>
+                        <span>{{item.mobile}}</span>
+                    </div>
+                    <p ontouchstart="" class="address_text p_address">{{item.detail}}</p>
+                    <img src="imgs/order_arrow.png" class="order_arrow">
+                </div>
+                <div class="behind">
+                    <a class="delete-btn ui-btn " onclick="show_tip('{{item.id}}')"> <img src="imgs/address_delete.png"></a>
+                </div>
+                <div class="borderD"></div>
+            </td>
+        </tr>
+        </tbody>
+        <div class="p5"></div>
+    </table>
+    {{/each}}
+</script>
+<script>
+
+</script>
+
+<!-- 确定删除 start -->
+<div id="confirm_win" style="display: none;" class="cod">
+    <div class="wx_mask"></div>
+    <div class="wx_confirm">
+        <div class="wx_confirm_inner" style="padding:0% 0 0 0;width:100%">
+            <div class="wx_confirm_hd bigfont p30">确定删除吗？</div>
+            <input type="hidden" id="delete_id" value="">
+
+            <div class="borderD"></div>
+            <div class="wx_confirm_btns" style="position:relative">
+                <button type="cancel" onclick="close_tip();">取消</button>
+                <button type="submit" onclick="del_address();">确定</button>
+                <div class="borderL"></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- 确定删除 end -->
+
+<div id="delete_address_show" style="display:none" class="cod">
+    <div class="wx_confirm ">
+        <div class="wx_confirm_inner" id="wx_confirm_float">
+            <div class="wx_confirm_hd">
+                <div class="wx_confirm_tit" id="show_mes"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="fixed-bottom white-bg">
+    <a href="address_edit.html?from=order">
+        <div class="borderD2"></div>
+        <div class="choose-time ">
+            <img src="imgs/icon_add.png">
+            <span class="am-button"> 添加地址</span>
+        </div>
+    </a>
+</div>
+
+<script type="text/javascript">
+
+
+    function bindfun() {
+        var x;
+        $('.swipe-delete tr div.ui-btn')
+            .on('touchstart', function (e) {
+
+                $('.swipe-delete tr div.ui-btn').css('left', '0px')
+                $(e.currentTarget).addClass('open')
+                x = e.originalEvent.targetTouches[0].pageX
+            })
+            .on('touchmove', function (e) {
+                var change = e.originalEvent.targetTouches[0].pageX - x
+                change = Math.min(Math.max(-76, change), 0)
+                e.currentTarget.style.left = change + 'px'
+                if (change < -4) disable_scroll()
+            })
+            .on('touchend', function (e) {
+                var left = parseInt(e.currentTarget.style.left)
+                var new_left;
+                if (left < -5) {
+                    new_left = '-76px'
+                } else {
+                    new_left = '0px'
+                }
+                // e.currentTarget.style.left = new_left
+                $(e.currentTarget).animate({left: new_left}, 200)
+                enable_scroll()
+            });
+
+
+    };
+
+    function prevent_default(e) {
+        e.preventDefault();
+    }
+
+    function disable_scroll() {
+        $(document).on('touchmove', prevent_default);
+    }
+
+    function enable_scroll() {
+        $(document).unbind('touchmove', prevent_default)
+    }
+
+    function del_address() {
+        $("#confirm_win").hide();
+        var delete_id = $("#delete_id").val();
+        console.log(delete_id)
+        //  var delete_data = {id: delete_id};
+        var getadd = {
+            url: 'api/userAddress/delete/' + delete_id,
+            type: 'get',
+            data: "",
+            tokenFlag: true,
+            sCallback: function (res) {
+                if (res.msg == undefined) {
+                    console.log(res)
+                    window.base.deleteLocalStorage("address")
+                    window.base.setLocalStorage("address", res)
+                    var addresshtml = template("address_box", {"address": res})
+                    $("#all_address .content").html(addresshtml)
+                    bindfun();
+                } else {
+                    console.log(res.msg)
+                    var addresshtml = template("address_box", "")
+                    $("#all_address .content").html(addresshtml)
+                    bindfun();
+                }
+            },
+            eCallback: function (e) {
+                //  showTip(e)
+            }
+        };
+        window.base.getData(getadd);
+    }
+
+    function show_tip(addr_id) {
+        $("#confirm_win").show();
+        $("#delete_id").val(addr_id);
+        return false;
+    }
+
+    function close_tip() {
+        $("#confirm_win").hide();
+        return false;
+    }
+
+    function alert_1(title) {
+        $("#delete_address_show #show_mes").html(title);
+        $("#delete_address_show").show().delay(1500).hide(0);
+    }
+
+    function alter_to_url(title, url) {
+        alert_1(title);
+        setTimeout("window.location.href='" + url + "'", 500);
+    }
+
+    //    // 携带地址数据,跳转地址编辑页
+    //    function edit_address(){
+    //        var url = $(this).data('link');
+    //        var from=getQueryString("from")
+    //        if(from=="order"){
+    //            url=url+"&from=order"
+    //        }
+    //        if(url){
+    //            window.location = "address_edit.html?"+url;
+    //        }
+    //    }
+    function select_address(url) {
+       if(getQueryString("from") == "order") {window.location = "orderadd.html?address_index=" + url;}
+
+
+    }
+    //获取URL参数方法
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]);
+        return null;
+    }
+    var getadd = {
+        url: 'api/userAddress/address/get',
+        type: 'get',
+        data: "",
+        tokenFlag: true,
+        sCallback: function (res) {
+            if (res.msg == undefined) {
+                //     console.log(res)
+                window.base.deleteLocalStorage("address")
+                window.base.setLocalStorage("address", res)
+                var addresshtml = template("address_box", {"address": res})
+                $("#all_address .content").html(addresshtml)
+                bindfun()
+            } else {
+                myalert(res.msg)
+            }
+        },
+        eCallback: function (e) {
+            //  showTip(e)
+        }
+    };
+    window.base.getData(getadd);
+</script>
+
+
+</body>
+
+</body>
+</html>

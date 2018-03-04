@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <title>title</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <style>
+        body {}
+
+        a {
+            text-decoration: none;
+        }
+
+        .price-tab {
+            font-size: 1.0rem;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 2;
+            background: #fff;
+            left: 0;
+        }
+
+        .tab-title {
+            line-height: 3.6rem;
+            text-align: center;
+            display: block;
+            border-bottom: 1px solid #dcdcdc;
+        }
+
+        .tab-title a {
+            text-decoration: none;
+            color: #3e3e3e;
+        }
+
+        .tab-title span {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 0 10px;
+        }
+
+        .checked-tab {
+            border-bottom: 2px solid #6A5345;
+            color: #6A5345;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="price-tab">
+        <div class="tab-title" id="tab">
+
+            <a href="#" onclick="fun1">
+                <span class="checked-tab select-category" id="leather">奢侈品养护</span>
+            </a>
+
+            <a href="#" onclick="fun2">
+                <span class="select-category" id="clothes">高端成衣家纺</span>
+            </a>
+
+        </div>
+    </section>
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+    function fun1() {
+        $api.setStorage('page', '0');
+    }
+
+    function fun2() {
+        $api.setStorage('page', '1');
+    }
+    apiready = function() {
+
+    };
+</script>
+
+</html>

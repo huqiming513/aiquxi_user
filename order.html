@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <title>订单中心</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="dist/idangerous.swiper.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/order.css">
+    <script src="dist/idangerous.swiper.min.js"></script>
+    <script src="js/zepto.js"></script>
+    <script src="js/template.js"></script>
+    <script src="js/common.js"></script>
+
+</head>
+<body>
+
+
+<div class="main">
+    <section id="topbar">
+        <div class="tabs"><a href="#" class="active">未完成</a> <a href="#">已完成</a></div>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="content-slide">
+
+                        <div id="order_process" class="order_process">
+
+
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="content-slide">
+                        <div id="order_finish" class="order_finish">
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script id="nologin" type="text/html">
+            <div class="wapContent" style="margin-top: 40px">
+                <div class="subwrap">
+                    <p>您还没有登录，请先登录！</p>
+                    <p><a href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxb4aa8e6e4549309d&redirect_uri=https%3A%2F%2Fwww.aiquxi.net%2Fapptest%2Flogin.html&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect">登录</a></p>
+                </div>
+            </div>
+        </script>
+
+
+        <script id="order_process_tem" type="text/html">
+
+            <div class="wapContent" style="font-size: 0.6rem">
+                <div class="myOrder" style="padding-bottom:60px;">
+                    <!-- 有订单 -->
+                    {{if data !=""}}
+                    {{each data as items index}}
+                    {{data}}
+                    {{if items.status.id != 9}}
+                    <ul>
+                        <!-- Order title start -->
+                        <li>
+                                <div class="category_block">
+                                    <div class="category_shoes">
+                                        订单编号：{{items.order_no}}
+                                    </div>
+                                </div>
+                        </li>
+                        <div class="borderD" style="border-color:#eee"></div>
+                        <!-- Order title end -->
+                        <!-- Order item start -->
+                        <li class="order_item mobile-font">
+                            <a  href="orderdetail.html?id={{items.id}}">
+                                <div class="order_box">
+                                    <div class="item_list_box" style="display: flex">
+                                        <span style="display: block;width: 50%">订单价格：￥{{items.total_price}}</span>
+                                        <span style="display: block;width: 50%">衣物总数：{{items.total_count}}</span>
+                                    </div>
+                                    <div class="item_list_box">取件时间：{{items.time}}</div>
+                                    <div class="item_list_box">订单描述：{{items.des}}</div>
+                                    <div class="item_list_box">物流状态：{{items.status.status}}</div>
+                                </div>
+                            </a>
+
+                            <div class="clearBoth"></div>
+
+                            <!-- Order button start -->
+                            <div class="item_list_money navlist">
+                                <div class="borderD"></div>
+                                <div class="item_list_box min-height">
+                                    <div class="orderList text-center" style="padding: 10px">
+                                        <button class="btn btn-default" onclick="cancel({{items.id}})")>取消订单</button>
+                                        {{if items.status.id == 3}}
+                                        <button class="btn btn-default" onclick="jump('pay.html?id={{items.id}}')">立即付款</button>
+                                        {{/if}}
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Order button end -->
+                            <div class="clearBoth"></div>
+                        </li>
+                        <!-- Order item end -->
+                    </ul>
+                    {{/if}}
+                    {{/each}}
+                    {{else}}
+                    <div style="text-align:center;line-height:40px;color:#999;"> 无更多订单</div>
+                    {{/if}}
+                    <div style="text-align:center;line-height:40px;color:#999;"> 无订单</div>
+                </div>
+            </div>
+
+        </script>
+
+        <script id="order_finish_tem" type="text/html">
+
+            <div class="wapContent" style="font-size: 0.6rem">
+                <div class="myOrder" style="padding-bottom:60px;">
+                    <!-- 有订单 -->
+                    {{if data !=""}}
+                    {{each data as item index}}
+                    {{if item.status.id == 9}}
+                    <ul>
+                        <!-- Order title start -->
+                        <li>
+                            <div class="category_block">
+                                <div class="category_shoes">
+                                    订单编号：{{item.order_no}}
+                                </div>
+                            </div>
+                        </li>
+                        <div class="borderD" style="border-color:#eee"></div>
+                        <!-- Order title end -->
+                        <!-- Order item start -->
+                        <li class="order_item mobile-font">
+                            <a  href="orderdetail.html?order_id={{item.order_no}}">
+                                <div class="order_box">
+                                    <div class="item_list_box" style="display: flex">
+                                        <span style="display: block;width: 50%">订单价格：￥{{item.total_price}}</span>
+                                        <span style="display: block;width: 50%">衣物总数：{{item.total_count}}</span>
+                                    </div>
+                                    <div class="item_list_box">取件时间：{{item.time}}</div>
+                                    <div class="item_list_box">订单描述：{{item.des}}</div>
+                                    <div class="item_list_box">物流状态：{{item.status.status}}</div>
+                                </div>
+                            </a>
+
+                            <!-- Order button start -->
+                            <!-- Order button end -->
+                            <div class="clearBoth"></div>
+                        </li>
+                        <!-- Order item end --> 
+                    </ul>
+                    {{/if}}
+                    {{/each}}
+                    {{else}}
+                    <div style="text-align:center;line-height:40px;color:#999;"> 无更多订单</div>
+                    {{/if}}
+                    <div style="text-align:center;line-height:40px;color:#999;"> 无订单</div>
+                </div>
+            </div>
+        </script>
+        <script id="noorder" type="text/html">
+            <div class="wapContent" style="margin-top: 40px">
+                <div class="subwrap">
+                    <p>您当前没有订单！</p>
+                </div>
+            </div>
+        </script>
+        <script>
+            var tabsSwiper = new Swiper('.swiper-container', {
+                onlyExternal: true,
+                speed: 500
+            })
+            $(".tabs a").on('touchstart mousedown', function (e) {
+                e.preventDefault()
+                $(".tabs .active").removeClass('active')
+                $(this).addClass('active')
+                tabsSwiper.swipeTo($(this).index())
+            })
+            $(".tabs a").click(function (e) {
+                e.preventDefault()
+            })
+
+
+            function alter_to_url(title,url) {
+                alert_1(title);
+                setTimeout("window.location.href='" + url + "'", 500);
+            }
+            function  jump(url){
+                window.location.href=url;
+            }
+
+            function show_tip(addr_id){
+                $("#confirm_win").show();
+                $("#delete_id").val(addr_id);
+                return false;
+            }
+            function del_order() {
+
+
+
+            }
+
+        </script>
+    </section>
+    <div id="confirm_win" style="display: none;" class="cod">
+        <div class="wx_mask"></div>
+        <div class="wx_confirm">
+            <div class="wx_confirm_inner" style="padding:0% 0 0 0;width:100%">
+                <div class="wx_confirm_hd bigfont p30">确定取消吗？</div>
+                <input type="hidden" id="delete_id" value="">
+
+                <div class="borderD"></div>
+                <div class="wx_confirm_btns" style="position:relative">
+                    <button type="cancel" onclick=";">取消</button>
+                    <button type="submit" onclick="del_order();">确定</button>
+                    <div class="borderL"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="indexMsg">
+            <div class="indexMenu">
+                <a href="index.html">
+                    <span class="foot home">首页</span>
+                </a>
+                <a href="order.html"><span class="foot order">订单</span></a>
+                <a href="mine.html">
+                    <span class="foot mine">我的</span>
+                </a>
+            </div>
+
+
+        </div>
+    </footer>
+    <script src="js/order.js"></script>
+</div>
+</body>
+</html>

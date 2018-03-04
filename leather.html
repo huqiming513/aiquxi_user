@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+    <meta charset="UTF-8">
+    <title>奢侈品养护</title>
+
+    <!-- 设置窗口自适应手机 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+
+    <!--苹果手机适配-->
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+
+    <!--引入css以及js文件-->
+    <link rel="stylesheet" href="css/luxury.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css"><!--一套绝佳的图标字体库和CSS框架-->
+    <script src="js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<section class="price-tab">
+    <div class="tab-title" id="tab">
+
+        <a href="#">
+            <span class="checked-tab select-category" id="leather">奢侈品养护</span>
+        </a>
+
+        <a href="#">
+            <span class="select-category" id="clothes">高端成衣家纺</span>
+        </a>
+
+    </div>
+</section>
+
+<section class="type-list" style="display: block">
+
+    <div class="space-box-3d6rem"></div>
+
+    <div class="type-box luxury_click" id="lux_01">
+        <div class="bg">
+            <img alt="爱趣洗" src="imgs/clothes-tag-1459308412938.png">
+        </div>
+        <div class="lux_txt">
+            <p class="big-type">箱包洗护</p>
+            <p class="small-type prices-line">
+
+                <span>钱包</span>
+                <span class="shu-line"></span>
+                <span>手袋</span>
+                <span class="shu-line"></span>
+                <span>旅行箱</span>
+            </p>
+        </div>
+    </div>
+    <div class="type-box luxury_click" id="lux_02">
+        <div class="bg">
+            <img alt="爱趣洗" src="imgs/clothes-tag-1459308421969.png">
+        </div>
+        <div class="lux_txt">
+            <p class="big-type">鞋靴洗护</p>
+            <p class="small-type prices-line">
+
+                <span>鞋</span>
+                <span class="shu-line"></span>
+                <span>靴</span>
+                <span class="shu-line"></span>
+                <span>运动鞋</span>
+                <span class="shu-line"></span>
+                <span>雪地靴</span>
+            </p>
+        </div>
+    </div>
+    <div class="type-box luxury_click" id="lux_03">
+        <div class="bg">
+            <img alt="爱趣洗" src="imgs/clothes-tag-1459308428966.png">
+        </div>
+        <div class="lux_txt">
+            <p class="big-type">皮质服饰洗护</p>
+            <p class="small-type prices-line">
+
+                <span>皮衣</span>
+                <span class="shu-line"></span>
+                <span>皮裤</span>
+                <span class="shu-line"></span>
+                <span>皮裙</span>
+                <span class="shu-line"></span>
+                <span>貂皮</span>
+            </p>
+        </div>
+    </div>
+    <div class="type-box luxury_click" id="lux_04">
+        <div class="bg">
+            <img alt="爱趣洗" src="imgs/clothes-tag-1459308436948.png">
+        </div>
+        <div class="lux_txt">
+            <p class="big-type">皮质饰品洗护</p>
+            <p class="small-type prices-line">
+
+                <span>皮带</span>
+                <span class="shu-line"></span>
+                <span>皮帽</span>
+                <span class="shu-line"></span>
+                <span>皮手套</span>
+            </p>
+        </div>
+    </div>
+    <div class="type-box luxury_click" id="lux_05">
+        <div class="bg">
+            <img alt="爱趣洗" src="imgs/clothes-tag-1509434072128.png">
+        </div>
+        <div class="lux_txt">
+            <p class="big-type">维修服务</p>
+            <p class="small-type prices-line">
+
+                <span>配件</span>
+                <span class="shu-line"></span>
+                <span>箱包</span>
+                <span class="shu-line"></span>
+                <span>鞋类</span>
+                <span class="shu-line"></span>
+                <span>改版定型</span>
+            </p>
+        </div>
+    </div>
+
+    <div class="space-box-60px"></div>
+
+</section>
+<!-- <div class="btn_yuyue" id="orderlink">
+    <a class="order-link" href="#">预约奢护管家</a>
+</div> -->
+</body>
+<script>
+
+    $(".luxury_click").click(function () {
+        api.openWin({
+            name: $(this).attr("id"),
+            url: 'detail/leather/'+$(this).attr("id")+'.html',
+        });
+
+    })
+
+</script>
+</html>

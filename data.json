@@ -1,0 +1,1265 @@
+{
+  "ret": true,
+  "ts": 1513575676,
+  "version": "1.0",
+  "data": [
+    {
+      "banners": [
+        {
+          "banner_id": 2066,
+          "url": "https:\/\/activity.xyqb.com\/activity\/59f93140d4bee00b5e680766?city_id=1&mark=ae891810-4aef-11e5-ade6-f80f41fd4734",
+          "url_type": "web",
+          "title": "\u91cf\u5316\u6d3e",
+          "image_url": "https:\/\/ops.edaixi.com\/\/images\/banners\/2066\/original\/%E4%BF%A1%E7%94%A8%E9%92%B1%E5%8C%85158.png?1513041098",
+          "inner_url": "",
+          "inner_type": "none",
+          "inner_title": "",
+          "description": ""
+        },
+        {
+          "banner_id": 1447,
+          "url": "http:\/\/mp.weixin.qq.com\/s?__biz=MzA3NjA4OTkwNQ==&mid=526601280&idx=1&sn=ca7991084518b98ca8180d67d8b3e19b&scene=19&city_id=1&mark=ae891810-4aef-11e5-ade6-f80f41fd4734#wechat_redirect",
+          "url_type": "web",
+          "title": "77\u5143\u6d17\u8863\u5238\uff0c\u9001\u4f60\uff01",
+          "image_url": "https:\/\/ops.edaixi.com\/\/images\/banners\/1447\/original\/banner%E6%B5%A6%E5%8F%91130_%281%29.jpg?1482894259",
+          "inner_url": "",
+          "inner_type": "none",
+          "inner_title": "",
+          "description": ""
+        }
+      ],
+      "category_id": 1,
+      "category_name": "\u6d17\u8863",
+      "types": [
+        {
+          "type_id": 11,
+          "type_name": "\u4e0a\u8863",
+          "descriptions": [],
+          "index_image": null,
+          "detail_image": [],
+          "clothes": [
+            {
+              "id": 1101,
+              "clothes_name": "单衬衫",
+              "price": "12.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 78,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E8%A1%A3/%E4%B8%8A%E8%A1%A3/9-%E8%A1%AC%E8%A1%AB.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 1104,
+              "clothes_name": "T\u6064\/polo\u886b",
+              "price": "12.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 78,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E8%A1%A3/%E4%B8%8A%E8%A1%A3/8-T%E6%81%A4%EF%BC%8FPolo%E8%A1%AB.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 1105,
+              "clothes_name": "西服上衣",
+              "price": "25.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 78,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E8%A1%A3/%E4%B8%8A%E8%A1%A3/1-%E8%A5%BF%E6%9C%8D%E4%B8%8A%E8%A1%A3.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 1106,
+              "clothes_name": "\u536b\u8863",
+              "price": "25.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 78,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E8%A1%A3/%E4%B8%8A%E8%A1%A3/2-%E5%8D%AB%E8%A1%A3.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 1107,
+              "clothes_name": "\u5939\u514b",
+              "price": "25.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 78,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E8%A1%A3/%E4%B8%8A%E8%A1%A3/3-%E5%A4%B9%E5%85%8B.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 1108,
+              "clothes_name": "\u771f\u4e1d\u4e0a\u8863",
+              "price": "35.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 78,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E8%A1%A3/%E4%B8%8A%E8%A1%A3/11-%E7%9C%9F%E4%B8%9D%E4%B8%8A%E8%A1%A3.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 1109,
+              "clothes_name": "\u80cc\u5fc3",
+              "price": "12.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 78,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E8%A1%A3/%E4%B8%8A%E8%A1%A3/10-%E8%83%8C%E5%BF%83.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 1110,
+              "clothes_name": "pu\u7c7b\u4e0a\u8863",
+              "price": "35.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 120,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E8%A1%A3/%E4%B8%8A%E8%A1%A3/6-pu%E7%B1%BB%E4%B8%8A%E8%A1%A3.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 1111,
+              "clothes_name": "\u5510\u88c5",
+              "price": "35.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 78,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E8%A1%A3/%E4%B8%8A%E8%A1%A3/7-%E5%94%90%E8%A3%85.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 1112,
+              "clothes_name": "\u6bdb\u80cc\u5fc3(\u9a6c\u7532)",
+              "price": "25.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 78,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E8%A1%A3/%E4%B8%8A%E8%A1%A3/4-%E6%AF%9B%E8%83%8C%E5%BF%83(%E9%A9%AC%E7%94%B2).jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 1113,
+              "clothes_name": "\u6bdb\u8863",
+              "price": "25.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 78,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E8%A1%A3/%E4%B8%8A%E8%A1%A3/5-%E6%AF%9B%E8%A1%A3.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 1114,
+              "clothes_name": "\u4fdd\u6696\u8863",
+              "price": "25.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 78,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E8%A1%A3/%E4%B8%8A%E8%A1%A3/12-%E4%BF%9D%E6%9A%96%E8%A1%A3.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 1115,
+              "clothes_name": "\u5355\u7761\u8863",
+              "price": "25.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 78,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E8%A1%A3/%E4%B8%8A%E8%A1%A3/13-%E5%8D%95%E7%9D%A1%E8%A1%A3.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 1116,
+              "clothes_name": "\u68c9\u7761\u8863",
+              "price": "35.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 78,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E8%A1%A3/%E4%B8%8A%E8%A1%A3/14-%E6%A3%89%E7%9D%A1%E8%A1%A3.jpg",
+              "suit_clothes": [],
+              "comments": []
+            }
+          ],
+          "suit": []
+        },
+        {
+          "type_id": 12,
+          "type_name": "\u5927\u8863\u5916\u5957",
+          "descriptions": [],
+          "index_image": "",
+          "detail_image": [],
+          "clothes": [
+            {
+              "id": 1201,
+              "clothes_name": "\u68c9\/\u7fbd\u7ed2\u80cc\u5fc3(\u9a6c\u7532)",
+              "price": "35.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 78,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E8%A1%A3/%E5%A4%A7%E8%A1%A3%E5%A4%96%E5%A5%97/2-%E6%A3%89%EF%80%A2%E7%BE%BD%E7%BB%92%E8%83%8C%E5%BF%83(%E9%A9%AC%E7%94%B2).jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 1202,
+              "clothes_name": "\u98ce\u8863",
+              "price": "35.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 78,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E8%A1%A3/%E5%A4%A7%E8%A1%A3%E5%A4%96%E5%A5%97/1-%E9%A3%8E%E8%A1%A3.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 1203,
+              "clothes_name": "\u7f8a\u6bdb\uff0f\u7ed2\u5916\u5957",
+              "price": "35.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 78,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E8%A1%A3/%E5%A4%A7%E8%A1%A3%E5%A4%96%E5%A5%97/5-%E7%BE%8A%E6%AF%9B%EF%BC%8F%E7%BB%92%E5%A4%96%E5%A5%97.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 1204,
+              "clothes_name": "\u68c9\u670d",
+              "price": "35.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 78,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E8%A1%A3/%E5%A4%A7%E8%A1%A3%E5%A4%96%E5%A5%97/3-%E6%A3%89%E6%9C%8D.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 1205,
+              "clothes_name": "\u7fbd\u7ed2\u670d",
+              "price": "35.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 78,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E8%A1%A3/%E5%A4%A7%E8%A1%A3%E5%A4%96%E5%A5%97/4-%E7%BE%BD%E7%BB%92%E6%9C%8D.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 1206,
+              "clothes_name": "\u51b2\u950b\u8863\uff08\u65e0\u5185\u80c6\uff09",
+              "price": "25.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 120,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E8%A1%A3/%E5%A4%A7%E8%A1%A3%E5%A4%96%E5%A5%97/6-%E5%86%B2%E9%94%8B%E8%A1%A3%EF%BC%88%E6%97%A0%E5%86%85%E8%83%86%EF%BC%89.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 1207,
+              "clothes_name": "\u51b2\u950b\u8863(\u542b\u5185\u80c6)",
+              "price": "35.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 120,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E8%A1%A3/%E5%A4%A7%E8%A1%A3%E5%A4%96%E5%A5%97/7-%E5%86%B2%E9%94%8B%E8%A1%A3%EF%BC%88%E5%90%AB%E5%86%85%E8%83%86%EF%BC%89.jpg",
+              "suit_clothes": [],
+              "comments": []
+            }
+          ],
+          "suit": []
+        },
+        {
+          "type_id": 13,
+          "type_name": "\u88e4\u88c5\u88d9\u88c5",
+          "descriptions": [],
+          "index_image": "",
+          "detail_image": [],
+          "clothes": [
+            {
+              "id": 1301,
+              "clothes_name": "\u666e\u901a\u534a\u8eab\u88d9",
+              "price": "12.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 78,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E8%A1%A3/%E8%A3%A4%E8%A3%85%E8%A3%99%E8%A3%85/10-%E6%99%AE%E9%80%9A%E5%8D%8A%E8%BA%AB%E8%A3%99.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 1302,
+              "clothes_name": "\u666e\u901a\u8fde\u8863\u88d9",
+              "price": "25.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 78,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E8%A1%A3/%E8%A3%A4%E8%A3%85%E8%A3%99%E8%A3%85/10-%E6%99%AE%E9%80%9A%E8%BF%9E%E8%A1%A3%E8%A3%99.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 1303,
+              "clothes_name": "\u6bdb\u5462\u534a\u8eab\u88d9",
+              "price": "25.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 78,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E8%A1%A3/%E8%A3%A4%E8%A3%85%E8%A3%99%E8%A3%85/13-%E6%AF%9B%E5%91%A2%E5%8D%8A%E8%BA%AB%E8%A3%99.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 1304,
+              "clothes_name": "\u6bdb\u5462\u8fde\u8863\u88d9",
+              "price": "35.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 78,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E8%A1%A3/%E8%A3%A4%E8%A3%85%E8%A3%99%E8%A3%85/12-%E6%AF%9B%E5%91%A2%E8%BF%9E%E8%A1%A3%E8%A3%99.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 1305,
+              "clothes_name": "PU\u7c7b\u534a\u8eab\u88d9",
+              "price": "25.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 120,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E8%A1%A3/%E8%A3%A4%E8%A3%85%E8%A3%99%E8%A3%85/16-PU%E7%B1%BB%E5%8D%8A%E8%BA%AB%E8%A3%99.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 1306,
+              "clothes_name": "PU\u7c7b\u8fde\u8863\u88d9",
+              "price": "35.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 120,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E8%A1%A3/%E8%A3%A4%E8%A3%85%E8%A3%99%E8%A3%85/17-PU%E7%B1%BB%E8%BF%9E%E8%A1%A3%E8%A3%99.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 1307,
+              "clothes_name": "\u771f\u4e1d\u534a\u8eab\u88d9",
+              "price": "35.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 78,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E8%A1%A3/%E8%A3%A4%E8%A3%85%E8%A3%99%E8%A3%85/14-%E7%9C%9F%E4%B8%9D%E5%8D%8A%E8%BA%AB%E8%A3%99.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 1308,
+              "clothes_name": "\u65d7\u888d",
+              "price": "39.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 78,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E8%A1%A3/%E8%A3%A4%E8%A3%85%E8%A3%99%E8%A3%85/18-%E6%97%97%E8%A2%8D.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 1309,
+              "clothes_name": "\u897f\u88e4",
+              "price": "12.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 78,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E8%A1%A3/%E8%A3%A4%E8%A3%85%E8%A3%99%E8%A3%85/1-%E8%A5%BF%E8%A3%A4.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 1310,
+              "clothes_name": "\u77ed\u88e4",
+              "price": "12.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 78,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E8%A1%A3/%E8%A3%A4%E8%A3%85%E8%A3%99%E8%A3%85/8-%E7%9F%AD%E8%A3%A4.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 1311,
+              "clothes_name": "\u725b\u4ed4\u88e4",
+              "price": "12.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 78,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E8%A1%A3/%E8%A3%A4%E8%A3%85%E8%A3%99%E8%A3%85/3-%E7%89%9B%E4%BB%94%E8%A3%A4.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 1312,
+              "clothes_name": "\u4f11\u95f2\u88e4",
+              "price": "12.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 78,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E8%A1%A3/%E8%A3%A4%E8%A3%85%E8%A3%99%E8%A3%85/2-%E4%BC%91%E9%97%B2%E8%A3%A4.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 1313,
+              "clothes_name": "\u771f\u4e1d\u8fde\u8863\u88d9",
+              "price": "39.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 78,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E8%A1%A3/%E8%A3%A4%E8%A3%85%E8%A3%99%E8%A3%85/15-%E7%9C%9F%E4%B8%9D%E8%BF%9E%E8%A1%A3%E8%A3%99.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 1314,
+              "clothes_name": "\u8fde\u4f53\u88e4",
+              "price": "25.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 78,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E8%A1%A3/%E8%A3%A4%E8%A3%85%E8%A3%99%E8%A3%85/5-%E8%BF%9E%E4%BD%93%E8%A3%A4.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 1315,
+              "clothes_name": "\u771f\u4e1d\u88e4",
+              "price": "35.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 78,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E8%A1%A3/%E8%A3%A4%E8%A3%85%E8%A3%99%E8%A3%85/9-%E7%9C%9F%E4%B8%9D%E8%A3%A4.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 1316,
+              "clothes_name": "\u6bdb\u88e4",
+              "price": "25.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 78,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E8%A1%A3/%E8%A3%A4%E8%A3%85%E8%A3%99%E8%A3%85/4-%E6%AF%9B%E8%A3%A4.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 1317,
+              "clothes_name": "\u68c9\u88e4\/\u7fbd\u7ed2\u88e4",
+              "price": "35.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 78,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E8%A1%A3/%E8%A3%A4%E8%A3%85%E8%A3%99%E8%A3%85/7-%E6%A3%89%E8%A3%A4%EF%80%A2%E7%BE%BD%E7%BB%92%E8%A3%A4.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 1318,
+              "clothes_name": "PU\u7c7b\u88e4\u5b50",
+              "price": "35.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 120,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E8%A1%A3/%E8%A3%A4%E8%A3%85%E8%A3%99%E8%A3%85/6-PU%E7%B1%BB%E8%A3%A4%E5%AD%90.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 1319,
+              "clothes_name": "\u4fdd\u6696\u88e4",
+              "price": "25.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 78,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E8%A1%A3/%E8%A3%A4%E8%A3%85%E8%A3%99%E8%A3%85/21-%E4%BF%9D%E6%9A%96%E8%A3%A4.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 1320,
+              "clothes_name": "\u5355\u7761\u88e4",
+              "price": "12.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 78,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E8%A1%A3/%E8%A3%A4%E8%A3%85%E8%A3%99%E8%A3%85/19-%E5%8D%95%E7%9D%A1%E8%A3%A4.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 1321,
+              "clothes_name": "\u68c9\u7761\u88e4",
+              "price": "25.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 78,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E8%A1%A3/%E8%A3%A4%E8%A3%85%E8%A3%99%E8%A3%85/20-%E6%A3%89%E7%9D%A1%E8%A3%A4.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 1322,
+              "clothes_name": "\u7761\u888d",
+              "price": "25.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 78,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E8%A1%A3/%E8%A3%A4%E8%A3%85%E8%A3%99%E8%A3%85/23-%E7%9D%A1%E8%A2%8D.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 1323,
+              "clothes_name": "\u666e\u901a\u7761\u88d9",
+              "price": "25.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 78,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E8%A1%A3/%E8%A3%A4%E8%A3%85%E8%A3%99%E8%A3%85/22-%E6%99%AE%E9%80%9A%E7%9D%A1%E8%A3%99.jpg",
+              "suit_clothes": [],
+              "comments": []
+            }
+          ],
+          "suit": []
+        },
+        {
+          "type_id": 4,
+          "type_name": "\u914d\u4ef6",
+          "descriptions": [],
+          "index_image": "",
+          "detail_image": [],
+          "clothes": [
+            {
+              "id": 1401,
+              "clothes_name": "\u9886\u5e26",
+              "price": "12.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 78,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E8%A1%A3/%E9%85%8D%E4%BB%B6/1-%E9%A2%86%E5%B8%A6.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 1402,
+              "clothes_name": "\u5e3d\u5b50",
+              "price": "12.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 78,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E8%A1%A3/%E9%85%8D%E4%BB%B6/2-%E5%B8%BD%E5%AD%90.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 1403,
+              "clothes_name": "\u56f4\u5dfe",
+              "price": "25.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 78,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E8%A1%A3/%E9%85%8D%E4%BB%B6/3-%E5%9B%B4%E5%B7%BE.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 1404,
+              "clothes_name": "\u4e1d\u5dfe",
+              "price": "25.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 78,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E8%A1%A3/%E9%85%8D%E4%BB%B6/4-%E4%B8%9D%E5%B7%BE.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 1405,
+              "clothes_name": "\u62ab\u80a9",
+              "price": "25.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 78,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E8%A1%A3/%E9%85%8D%E4%BB%B6/5-%E6%8A%AB%E8%82%A9.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 1406,
+              "clothes_name": "\u6bdb\u9886",
+              "price": "25.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 78,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E8%A1%A3/%E9%85%8D%E4%BB%B6/6-%E6%AF%9B%E9%A2%86.jpg",
+              "suit_clothes": [],
+              "comments": []
+            }
+          ],
+          "suit": []
+        }
+      ],
+      "tips": [
+        "\u7fbd\u7ed2\u670d\u3001\u68c9\u670d\u7b49\u539a\u91cd\u8863\u7269\u9884\u8ba13-5\u5929\u9001\u56de",
+        "\u76ae\u8863\u3001\u88d8\u8863\u9884\u8ba17-9\u5929\u9001\u56de"
+      ],
+      "coupon_info": ""
+    },
+    {
+      "banners": [
+        {
+          "banner_id": 2016,
+          "url": "http:\/\/mp.weixin.qq.com\/s?__biz=MzA3NjA4OTkwNQ==&mid=526601280&idx=1&sn=ca7991084518b98ca8180d67d8b3e19b&scene=19&city_id=1&mark=ae891810-4aef-11e5-ade6-f80f41fd4734#wechat_redirect",
+          "url_type": "web",
+          "title": "77\u5143\u6d17\u8863\u5238\uff0c\u9001\u4f60\uff01",
+          "image_url": "https:\/\/ops.edaixi.com\/\/images\/banners\/2016\/original\/banner%E6%B5%A6%E5%8F%91130_%281%29.jpg?1507771236",
+          "inner_url": "",
+          "inner_type": "none",
+          "inner_title": "",
+          "description": ""
+        }
+      ],
+      "category_id": 2,
+      "category_name": "\u6d17\u978b",
+      "types": [
+        {
+          "type_id": 21,
+          "type_name": "\u978b\u7c7b",
+          "descriptions": [],
+          "index_image": "",
+          "detail_image": [],
+          "clothes": [
+            {
+              "id": 2101,
+              "clothes_name": "\u8fd0\u52a8\u978b\uff08\u666e\u901a\u9762\u6599\uff09",
+              "price": "25.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u53cc",
+              "limit_time": 120,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E9%9E%8B/%E9%9E%8B%E7%B1%BB/1-%E8%BF%90%E5%8A%A8%E9%9E%8B%EF%BC%88%E6%99%AE%E9%80%9A%E9%9D%A2%E6%96%99%EF%BC%89.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 2102,
+              "clothes_name": "\u8fd0\u52a8\u978b\uff08\u5149\u9762\u76ae\u9769\uff09",
+              "price": "25.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u53cc",
+              "limit_time": 120,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E9%9E%8B/%E9%9E%8B%E7%B1%BB/3-%E8%BF%90%E5%8A%A8%E9%9E%8B%EF%BC%88%E5%85%89%E9%9D%A2%E7%9A%AE%E9%9D%A9%EF%BC%89.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 2103,
+              "clothes_name": "\u8fd0\u52a8\u978b\uff08\u90e8\u5206\u7ed2\u9762\uff09(1\/2\u9762\u79ef\u4ee5\u5185\u542b\uff09",
+              "price": "29.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u53cc",
+              "limit_time": 148,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E9%9E%8B/%E9%9E%8B%E7%B1%BB/4-%E8%BF%90%E5%8A%A8%E9%9E%8B%EF%BC%88%E9%83%A8%E5%88%86%E7%BB%92%E9%9D%A2%EF%BC%89(1%EF%80%A22%E9%9D%A2%E7%A7%AF%E4%BB%A5%E5%86%85%E5%90%AB%EF%BC%89.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 2104,
+              "clothes_name": "\u8fd0\u52a8\u978b\uff08\u5168\u7ed2\u9762\uff09",
+              "price": "39.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u53cc",
+              "limit_time": 148,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E9%9E%8B/%E9%9E%8B%E7%B1%BB/6-%E8%BF%90%E5%8A%A8%E9%9E%8B%EF%BC%88%E5%85%A8%E7%BB%92%E9%9D%A2%EF%BC%89.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 2105,
+              "clothes_name": "\u5e06\u5e03\u978b",
+              "price": "25.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u53cc",
+              "limit_time": 120,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E9%9E%8B/%E9%9E%8B%E7%B1%BB/5-%E5%B8%86%E5%B8%83%E9%9E%8B.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 2106,
+              "clothes_name": "\u5149\u9762\u76ae\u978b",
+              "price": "25.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u53cc",
+              "limit_time": 120,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E9%9E%8B/%E9%9E%8B%E7%B1%BB/7-%E5%85%89%E9%9D%A2%E7%9A%AE%E9%9E%8B.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 2107,
+              "clothes_name": "\u90e8\u5206\u7ed2\u9762\u978b(1\/2\u9762\u79ef\u4ee5\u5185\u542b\uff09",
+              "price": "29.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u53cc",
+              "limit_time": 148,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E9%9E%8B/%E9%9E%8B%E7%B1%BB/8-%E9%83%A8%E5%88%86%E7%BB%92%E9%9D%A2%E9%9E%8B(1%EF%80%A22%E9%9D%A2%E7%A7%AF%E4%BB%A5%E5%86%85%E5%90%AB%EF%BC%89.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 2108,
+              "clothes_name": "\u7ed2\u9762\u978b",
+              "price": "39.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u53cc",
+              "limit_time": 148,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E9%9E%8B/%E9%9E%8B%E7%B1%BB/9-%E7%BB%92%E9%9D%A2%E9%9E%8B.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 2109,
+              "clothes_name": "\u68c9\u978b",
+              "price": "39.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u53cc",
+              "limit_time": 120,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E9%9E%8B/%E9%9E%8B%E7%B1%BB/10-%E6%A3%89%E9%9E%8B.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 2110,
+              "clothes_name": "\u51c9\u978b",
+              "price": "25.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u53cc",
+              "limit_time": 120,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E9%9E%8B/%E9%9E%8B%E7%B1%BB/13-%E5%87%89%E9%9E%8B.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 2111,
+              "clothes_name": "\u62d6\u978b",
+              "price": "25.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u53cc",
+              "limit_time": 120,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E9%9E%8B/%E9%9E%8B%E7%B1%BB/12-%E6%8B%96%E9%9E%8B.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 2112,
+              "clothes_name": "\u4f20\u7edf\u5e03\u978b",
+              "price": "25.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u53cc",
+              "limit_time": 148,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E9%9E%8B/%E9%9E%8B%E7%B1%BB/11-%E4%BC%A0%E7%BB%9F%E5%B8%83%E9%9E%8B.jpg",
+              "suit_clothes": [],
+              "comments": []
+            }
+          ],
+          "suit": []
+        },
+        {
+          "type_id": 22,
+          "type_name": "\u9774\u7c7b",
+          "descriptions": [],
+          "index_image": "",
+          "detail_image": [],
+          "clothes": [
+            {
+              "id": 2201,
+              "clothes_name": "\u96ea\u5730\u9774",
+              "price": "35.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u53cc",
+              "limit_time": 148,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E9%9E%8B/%E9%9D%B4%E7%B1%BB/%E9%9B%AA%E5%9C%B0%E9%9D%B4.png",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 2202,
+              "clothes_name": "\u7ed2\u9762\u9774",
+              "price": "35.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u53cc",
+              "limit_time": 148,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E9%9E%8B/%E9%9D%B4%E7%B1%BB/%E7%BB%92%E9%9D%A2%E9%9D%B4.png",
+              "suit_clothes": [],
+              "comments": []
+            },
+
+            {
+              "id": 2203,
+              "clothes_name": "\u975e\u7ed2\u9762\u9774",
+              "price": "35.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u53cc",
+              "limit_time": 148,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E9%9E%8B/%E9%9D%B4%E7%B1%BB/%E9%9D%9E%E7%BB%92%E9%9D%A2%E9%9D%B4.png",
+              "suit_clothes": [],
+              "comments": []
+            }
+          ],
+          "suit": []
+        }
+      ],
+      "tips": [],
+      "coupon_info": ""
+    },
+    {
+      "banners": [
+        {
+          "banner_id": 2066,
+          "url": "https:\/\/activity.xyqb.com\/activity\/59f93140d4bee00b5e680766?city_id=1&mark=ae891810-4aef-11e5-ade6-f80f41fd4734",
+          "url_type": "web",
+          "title": "\u91cf\u5316\u6d3e",
+          "image_url": "https:\/\/ops.edaixi.com\/\/images\/banners\/2066\/original\/%E4%BF%A1%E7%94%A8%E9%92%B1%E5%8C%85158.png?1513041098",
+          "inner_url": "",
+          "inner_type": "none",
+          "inner_title": "",
+          "description": ""
+        },
+        {
+          "banner_id": 1447,
+          "url": "http:\/\/mp.weixin.qq.com\/s?__biz=MzA3NjA4OTkwNQ==&mid=526601280&idx=1&sn=ca7991084518b98ca8180d67d8b3e19b&scene=19&city_id=1&mark=ae891810-4aef-11e5-ade6-f80f41fd4734#wechat_redirect",
+          "url_type": "web",
+          "title": "77\u5143\u6d17\u8863\u5238\uff0c\u9001\u4f60\uff01",
+          "image_url": "https:\/\/ops.edaixi.com\/\/images\/banners\/1447\/original\/banner%E6%B5%A6%E5%8F%91130_%281%29.jpg?1482894259",
+          "inner_url": "",
+          "inner_type": "none",
+          "inner_title": "",
+          "description": ""
+        }
+      ],
+      "category_id": 3,
+      "category_name": "\u6d17\u5bb6\u7eba",
+      "types": [
+        {
+          "type_id": 31,
+          "type_name": "\u5bb6\u7eba",
+          "descriptions": [],
+          "index_image": "",
+          "detail_image": [],
+          "clothes": [
+            {
+              "id": 3101,
+              "clothes_name": "沙发套/位",
+              "price": "35.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u888b",
+              "limit_time": 168,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E5%AE%B6%E7%BA%BA/15-%E6%B2%99%E5%8F%91%E5%A5%97%EF%80%A2%E4%BD%8D.jpg",
+              "suit_clothes": [],
+              "comments": [],
+              "discount_info": {
+                "original_price": "299.0",
+                "deadline": "2018-01-17",
+                "created_at": 1513421845
+              }
+            },
+            {
+              "id": 3102,
+              "clothes_name": "\u6795\u5dfe",
+              "price": "12.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 78,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E8%A2%8B%E6%B4%97/%E6%B4%97%E8%A2%8B.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 3103,
+              "clothes_name": "\u6795\u5957",
+              "price": "12.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 78,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E5%AE%B6%E7%BA%BA/2-%E6%9E%95%E5%A5%97.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 3104,
+              "clothes_name": "\u5e8a\u5355",
+              "price": "12.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 78,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E5%AE%B6%E7%BA%BA/3-%E5%BA%8A%E5%8D%95.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 3105,
+              "clothes_name": "\u88ab\u7f69",
+              "price": "25.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 78,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E5%AE%B6%E7%BA%BA/4-%E8%A2%AB%E7%BD%A9.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 3106,
+              "clothes_name": "\u5e8a\u7f69\/\u5e8a\u7b20",
+              "price": "40.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 168,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E5%AE%B6%E7%BA%BA/5-.%E5%BA%8A%E7%BD%A9%EF%80%A2%E5%BA%8A%E7%AC%A0jpg.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 3108,
+              "clothes_name": "\u6bdb\u5dfe",
+              "price": "12.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 78,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E5%AE%B6%E7%BA%BA/6-%E6%AF%9B%E5%B7%BE.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 3109,
+              "clothes_name": "\u6d74\u5dfe",
+              "price": "12.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 78,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E5%AE%B6%E7%BA%BA/7-%E6%B5%B4%E5%B7%BE.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 3110,
+              "clothes_name": "\u6bdb\u5dfe\u88ab",
+              "price": "35.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 78,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E5%AE%B6%E7%BA%BA/7-%E6%B5%B4%E5%B7%BE.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 3111,
+              "clothes_name": "\u666e\u901a\u88ab\u5b50\/\u8e0f\u82b1\u88ab",
+              "price": "70.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 168,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E5%AE%B6%E7%BA%BA/12-%E6%99%AE%E9%80%9A%E8%A2%AB%E5%AD%90%EF%80%A2%E8%B8%8F%E8%8A%B1%E8%A2%AB.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 3112,
+              "clothes_name": "\u6bdb\u6bef",
+              "price": "35.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 168,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E5%AE%B6%E7%BA%BA/10-%E6%AF%9B%E6%AF%AF.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 3113,
+              "clothes_name": "\u8695\u4e1d\u88ab\/\u7f8a\u6bdb\u88ab",
+              "price": "115.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 168,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E5%AE%B6%E7%BA%BA/13-%E8%9A%95%E4%B8%9D%E8%A2%AB%EF%80%A2%E7%BE%8A%E6%AF%9B%E8%A2%AB.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 3114,
+              "clothes_name": "\u7fbd\u7ed2\u88ab",
+              "price": "75.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 168,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E5%AE%B6%E7%BA%BA/14-%E7%BE%BD%E7%BB%92%E8%A2%AB.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 3115,
+              "clothes_name": "\u5305\uff08\u975e\u76ae\u8d28\uff09",
+              "price": "35.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 168,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E5%AE%B6%E7%BA%BA/18-%E5%8C%85%EF%BC%88%E9%9D%9E%E7%9A%AE%E8%B4%A8%EF%BC%89.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 3116,
+              "clothes_name": "\u6c7d\u8f66\u5750\u57ab\uff08\u975e\u76ae\u8d28\uff09\uff0f\u4f4d",
+              "price": "35.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 168,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E5%AE%B6%E7%BA%BA/17-%E6%B1%BD%E8%BD%A6%E5%9D%90%E5%9E%AB%EF%BC%88%E9%9D%9E%E7%9A%AE%E8%B4%A8%EF%BC%89%EF%BC%8F%E4%BD%8D.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 3117,
+              "clothes_name": "\u6c7d\u8f66\u5750\u57ab(\u6bdb\u76ae\u3001\u76ae\u9769)\uff0f\u4f4d",
+              "price": "85.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 168,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E5%AE%B6%E7%BA%BA/16-%E6%B1%BD%E8%BD%A6%E5%9D%90%E5%9E%AB(%E6%AF%9B%E7%9A%AE%E3%80%81%E7%9A%AE%E9%9D%A9)%EF%BC%8F%E4%BD%8D.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 3118,
+              "clothes_name": "\u9760\u57ab\/\u62b1\u6795",
+              "price": "25.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u4ef6",
+              "limit_time": 168,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E6%B4%97%E5%AE%B6%E7%BA%BA/11-%E9%9D%A0%E5%9E%AB%EF%BC%8F%E6%8A%B1%E6%9E%95.jpg",
+              "suit_clothes": [],
+              "comments": []
+            }
+          ],
+          "suit": []
+        }
+      ],
+      "tips": [
+        "\u7fbd\u7ed2\u670d\u3001\u68c9\u670d\u7b49\u539a\u91cd\u8863\u7269\u9884\u8ba13-5\u5929\u9001\u56de",
+        "\u76ae\u8863\u3001\u88d8\u8863\u9884\u8ba17-9\u5929\u9001\u56de"
+      ],
+      "coupon_info": ""
+    },
+    {
+      "banners": [],
+      "category_id": 4,
+      "category_name": "\u6d17\u7a97\u5e18",
+      "types": [
+        {
+          "type_id": 41,
+          "type_name": "\u5927\u7a97\u5e18",
+          "descriptions": [
+            "0.53mx0.63m",
+            "20~23",
+            "30~35"
+          ],
+          "index_image": "",
+          "detail_image": [],
+          "clothes": [
+            {
+              "id": 4101,
+              "clothes_name": "\u5927\u888b",
+              "price": "259.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u888b",
+              "limit_time": 168,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E8%A2%8B%E6%B4%97/%E6%B4%97%E8%A2%8B.jpg",
+              "suit_clothes": [],
+              "comments": [],
+              "discount_info": {
+                "original_price": "299.0",
+                "deadline": "2018-01-17",
+                "created_at": 1513421882
+              }
+            }
+          ],
+          "suit": []
+        },
+        {
+          "type_id": 42,
+          "type_name": "\u7a97\u5e18\u62c6\u88c5\u8d39",
+          "descriptions": [
+            "\u7a97\u5e18\u62c6\u88c5\u8d39"
+          ],
+          "index_image": "",
+          "detail_image": [],
+          "clothes": [
+            {
+              "id": 4201,
+              "clothes_name": "\u7a97\u5e18\u62c6\u88c5\u8d39",
+              "price": "100.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u888b",
+              "limit_time": 168,
+              "image": "https:\/\/opsgoods-10004522.image.myqcloud.com\/clothes-1498445992408",
+              "suit_clothes": [],
+              "comments": []
+            }
+          ],
+          "suit": []
+        }
+      ],
+      "tips": [],
+      "coupon_info": ""
+    },
+    {
+      "banners": [],
+      "category_id": 5,
+      "category_name": "\u888b\u6d17",
+      "types": [
+        {
+          "type_id": 51,
+          "type_name": "\u888b\u6d17",
+          "descriptions": [],
+          "index_image": "",
+          "detail_image": [],
+          "clothes": [
+            {
+              "id": 5101,
+              "clothes_name": "帆布袋",
+              "price": "128.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u888b",
+              "limit_time": 168,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E8%A2%8B%E6%B4%97/%E6%B4%97%E8%A2%8B.jpg",
+              "suit_clothes": [],
+              "comments": []
+            },
+            {
+              "id": 5102,
+              "clothes_name": "大袋洗",
+              "price": "259.0",
+              "is_discount": false,
+              "is_suit": false,
+              "unit": "\u888b",
+              "limit_time": 168,
+              "image": "http://iquxi.oss-cn-shanghai.aliyuncs.com/productimg/%E8%A2%8B%E6%B4%97/%E6%B4%97%E8%A2%8B.jpg",
+              "suit_clothes": [],
+              "comments": []
+            }
+          ],
+          "suit": []
+        }
+      ],
+      "tips": [],
+      "coupon_info": ""
+    }
+  ]
+}

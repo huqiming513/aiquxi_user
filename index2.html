@@ -1,0 +1,90 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="tephone=no,email=no,date=no,address=no">
+		<style type="text/css">
+			html{ background:#fff; }
+			header{ border-bottom: 1px solid #ccc; padding: 25px 0; }
+			span {
+				padding: 5px 15px;
+				margin: 10px;
+				display: inline-block;
+				background-color: #e8e8e8;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>UICityList</h1>
+			<mark>
+				使用前请详细阅读 文档 使用规则
+			</mark>
+		</header>
+		<span tapmode onclick="fnOpen()">open</span>
+		<span tapmode onclick="fnClose()">close</span>
+		<span tapmode onclick="fnShow()">show</span>
+		<span tapmode onclick="fnHide()">hide</span>
+	</body>
+	<script type="text/javascript" src="./script/api.js"></script>
+	<script type="text/javascript">
+		var UICityList;
+		apiready = function() {
+			UICityList = api.require('UICityList');
+		};
+		function fnClose() {
+			UICityList.close();
+		}
+
+		function fnShow() {
+			UICityList.show();
+		}
+
+		function fnHide() {
+			UICityList.hide();
+		}
+
+		function fnOpen() {
+			alert( JSON.stringify( {
+					x : 15,
+					y : api.winHeight / 3 + 7,
+					w : api.winWidth - 30,
+					h : api.winHeight  - 10
+				} ))
+			UICityList.open({
+				rect : {
+					x : 15,
+					y : api.winHeight / 3 + 7,
+					w : api.winWidth - 30,
+					h : api.winHeight  - 10
+				},
+				resource : 'widget://res/UICityList.json',
+				styles : {
+					searchBar : {
+						bgColor : '#7AC5CD',
+						cancColor : '#E3E3E3'
+					},
+					location : {
+						color : '#7AC5CD',
+					},
+					sectionTitle : {
+						bgColor : '#7AC5CD',
+					},
+					item : {
+						bgColor : '#7AC5CD',
+					},
+					indicator : {
+						bgColor : '#7AC5CD',
+					}
+				},
+				currentCity : '北京',
+			}, function(ret, err) {
+				if (ret) {
+					alert(JSON.stringify(ret));
+				} else {
+					alert(JSON.stringify(err));
+				}
+			});
+		}
+	</script>
+</html>

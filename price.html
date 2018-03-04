@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <title>价目中心</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/price.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/base.css">
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/zepto.js"></script>
+    <script src="js/template.js"></script>
+</head>
+<body>
+<body>
+<div class="nav-head">
+    <ul id="list" style="transform: translate(0px, 0px) scale(1);">
+        <li class="selected">洗衣</li>
+        <li class="">洗鞋</li>
+        <li class="">家纺</li>
+        <li class="">洗窗帘</li>
+        <!--<li class="">高端成衣家纺</li>-->
+        <!--<li class="">奢侈品养护</li>-->
+        <li>袋洗</li>
+    </ul>
+</div>
+<div class="price-content">
+    <ul id="price-area">
+
+
+
+    </ul>
+</div>
+
+
+<script type="text/html" id="price_tem">
+    {{each data as item}}
+    <li style="display: price-list;">
+        {{each item.type as items}}
+        <table class="price-list">
+            <tbody>
+            <tr>
+                <th>{{items.name}}</th>
+                <th> 价格</th>
+                <th>洗护周期</th>
+            </tr>
+            {{ each items.clothes as itemsdata}}
+            <tr>
+                <td>{{itemsdata.name}}</td>
+                <td>{{itemsdata.price}} 元</td>
+                <td>3-4天</td>
+            </tr>
+            {{/each}}
+
+            </tbody>
+        </table>
+       {{/each}}
+
+    </li>
+
+    {{/each}}
+</script>
+<script>if ($(".nav-head li").hasClass("selected")) {
+    var index = $(this).index() + 1;
+    $(".price-content ul li").eq(index).show().siblings().hide();
+}
+$(".nav-head li").on('click', function () {
+    var index = $(this).index();
+    if (index > 3) {
+        var n = index - 4;
+        $(".nav-head ul").scrollLeft(145 + (n * 100));
+    }
+    $(this).addClass("selected").siblings().removeClass("selected");
+    $(".price-content ul li").eq(index).show().siblings().hide();
+});
+
+var getprice={
+    url:'cms/price/get/',
+    type:'get',
+    data:"",
+    tokenFlag:false,
+    sCallback:function(res){
+        if(res){
+            var price_html=template("price_tem",{"data":res})
+            $("#price-area").html(price_html)
+            console.log(res)
+
+        }else {
+            alert("获取价格失败")
+        }
+    },
+    eCallback:function(e){
+        //     showTip(e)
+    }
+};
+window.base.getData(getprice);
+
+</script>
+</body>
+</body>
+</html>

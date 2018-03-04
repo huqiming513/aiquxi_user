@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <title>确认订单信息</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/order.css">
+    <script src="js/zepto.js"></script>
+    <script src="js/template.js"></script>
+    <script src="js/common.js"></script>
+
+</head>
+<script>
+
+ function certain(id) {
+     order_info={"id":id,"products":""}
+     var getorder={
+         url:'api/order/delivery/update/',
+         type:'post',
+         data:JSON.stringify(order_info),
+         data_type:true,
+         tokenFlag:true,
+         sCallback:function(res){
+             if(res.msg=="ok"){
+                 alert("确认订单成功")
+                 console.log(orderdata)
+             }else {
+                 alert("确认订单信息失败")
+             }
+         },
+         eCallback:function(e){
+             //     showTip(e)
+         }
+     };
+     window.base.getData(getorder);
+ }
+
+</script>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    background: #FFFFFF;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+html{
+    font-size: 14px;
+}
+
+div {
+    display: block;
+}
+
+ul, li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+
+.container {
+    margin-bottom: 8rem;
+}
+
+.header-img {
+    width: 100%;
+}
+
+.prices-box {
+    padding: 4%;
+}
+
+.prices-list {
+    box-shadow: 0 0 4px 0px #b4b4b4;
+    color: #6d5a53;
+    font-size: 1rem;
+}
+
+.list-box {
+    padding: 2% 4% 0 4%;
+    font-size: 0;
+}
+
+.list-box p {
+    display: inline-block;
+    font-size: 0.875rem;
+}
+
+.prices-line {
+    line-height: 24px;
+    margin: 0;
+    width: 82%;
+}
+
+.prices-line .shu-line {
+    border-left: 1px solid #bbb;
+    height: 8px;
+    display: inline-block;
+    margin: 0 4px;
+}
+
+.clothes-prices {
+    margin: 0;
+    font-weight: bold;
+    line-height: 32px;
+    width: 18%;
+    text-align: right;
+}
+
+.clothes-tip {
+    margin: 0;
+    text-align: center;
+    background: #f6f6f6;
+    font-size: 1rem;
+    color: #8a8a8a;
+    padding: 3%;
+}
+
+.service-flow, .service-features, .maintenance, .classic-class{
+    display: block;
+    padding: 4%;
+}
+
+.service-title {
+    text-align: center;
+}
+
+.service-title img {
+    width: 72%;
+}
+
+.flow-introduce {
+    width: 100%;
+    margin-top: 3%;
+}
+
+.flow-introduce img:nth-child(2n+1) { /*只对奇数位序的子元素生效*/
+    width: 17%;
+}
+
+.flow-introduce img:nth-child(2n+2) { /*只对偶数位序的子元素生效*/
+    width: 4%;
+    margin: 2%;
+    margin-bottom: 9%;
+}
+
+.flow-introduce img {
+    display: inline-block;
+}
+
+.word-flow {
+    color: #656565;
+    font-size: 0.875rem;
+}
+
+.word-flow span:first-child {
+    width: 19%;
+    margin-right: 4%;
+}
+
+.word-flow span {
+    display: inline-block;
+    text-align: center;
+    width: 25%;
+}
+
+.word-flow span:last-child {
+    width: 19%;
+    margin-left: 4%;
+}
+
+.feature-introduce {
+    background: #f6f5f5;
+    border-radius: 1rem;
+    color: #656565;
+    padding: 4% 3%;
+    margin-top: 3%;
+}
+
+.feature-introduce ul li {
+    list-style: square outside url(../imgs/icon_right.png);
+    line-height: 24px;
+    margin-left: 6%;
+    text-align: left;
+}
+.process-list{
+    margin-top: 3%;
+}
+.process-list img{
+    width: 100%;
+}
+.case-list{
+    margin-top: 3%;
+}
+.case-list img{
+    margin: 1% 0;
+    width: 100%;
+}
+.case-eq{
+    position: relative;
+}
+.btn_yuyue {
+    padding: 4%;
+    left: 0;
+    position: fixed;
+    bottom: 0;
+    width: 92%;
+    border-top: 1px solid #eee;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.5);
+    display: block;
+}
+
+.order-link {
+    background: #382D29;
+    display: inline-block;
+    width: 100%;
+    color: #fff;
+    line-height: 42px;
+    border-radius: 4px;
+}

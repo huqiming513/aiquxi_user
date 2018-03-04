@@ -1,0 +1,19 @@
+.order_box{
+    background-color: beige;
+    padding: 10px;
+    font-size: 0.9rem;
+    margin: 5px 0;
+}
+.order_box p{
+    padding:2px 0;
+    margin: 0;
+    line-height: 1.2rem;
+}
+.btn_order{
+    display: inline-block;
+    width: 10rem;
+    margin: 5px 20px;
+}
+.btn_area{
+    text-align: center;
+}

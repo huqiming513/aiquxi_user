@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+    <meta charset="UTF-8">
+    <title>高端成衣家纺</title>
+
+    <!-- 设置窗口自适应手机 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+
+    <!--苹果手机适配-->
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+
+    <!--引入css以及js文件-->
+    <link rel="stylesheet" href="css/luxury.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css"><!--一套绝佳的图标字体库和CSS框架-->
+    <script src="js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<section class="price-tab">
+    <div class="tab-title" id="tab">
+
+        <a href="#">
+            <span class="select-category" id="leather">奢侈品养护</span>
+        </a>
+
+        <a href="#">
+            <span class="checked-tab select-category" id="clothes">高端成衣家纺</span>
+        </a>
+
+    </div>
+</section>
+
+<section class="type-list" style="display: block">
+
+    <div class="space-box-3d6rem"></div>
+
+    <div class="type-box clothes_click" id="lux_06">
+        <div class="bg">
+            <img alt="爱趣洗" src="imgs/clothes-tag-1459308451101.png">
+        </div>
+        <div class="lux_txt">
+            <p class="big-type">上衣</p>
+            <p class="small-type prices-line">
+
+                <span>T恤</span>
+                <span class="shu-line"></span>
+                <span>衬衣</span>
+                <span class="shu-line"></span>
+                <span>毛衣</span>
+                <span class="shu-line"></span>
+                <span>大衣外套</span>
+            </p>
+        </div>
+    </div>
+    <div class="type-box clothes_click" id="lux_07">
+        <div class="bg">
+            <img alt="爱趣洗" src="imgs/clothes-tag-1459308458345.png">
+        </div>
+        <div class="lux_txt">
+            <p class="big-type">裤装裙装</p>
+            <p class="small-type prices-line">
+
+                <span>半裙</span>
+                <span class="shu-line"></span>
+                <span>连衣裙</span>
+                <span class="shu-line"></span>
+                <span>裤装</span>
+            </p>
+        </div>
+
+    </div>
+    <div class="type-box clothes_click" id="lux_08">
+        <div class="bg">
+            <img alt="爱趣洗" src="imgs/clothes-tag-1459308467516.png">
+        </div>
+        <div class="lux_txt">
+            <p class="big-type">婚纱礼服</p>
+            <p class="small-type prices-line">
+
+                <span>婚纱</span>
+                <span class="shu-line"></span>
+                <span>礼服</span>
+                <span class="shu-line"></span>
+                <span>旗袍</span>
+            </p>
+        </div>
+
+    </div>
+    <div class="type-box clothes_click" id="lux_09">
+        <div class="bg">
+            <img alt="爱趣洗" src="imgs/clothes-tag-1459308487884.png">
+        </div>
+        <div class="lux_txt">
+            <p class="big-type">床上用品</p>
+            <p class="small-type prices-line">
+
+                <span>床单</span>
+                <span class="shu-line"></span>
+                <span>被罩</span>
+                <span class="shu-line"></span>
+                <span>被子</span>
+                <span class="shu-line"></span>
+                <span>毛毯</span>
+            </p>
+        </div>
+    </div>
+    <div class="type-box clothes_click" id="lux_10">
+        <div class="bg">
+            <img alt="爱趣洗" src="imgs/clothes-tag-1459308496638.png">
+        </div>
+        <div class="lux_txt">
+            <p class="big-type">家居用品</p>
+            <p class="small-type prices-line">
+
+                <span>抱枕套</span>
+                <span class="shu-line"></span>
+                <span>沙发套</span>
+                <span class="shu-line"></span>
+                <span>地毯</span>
+            </p>
+        </div>
+    </div>
+    <div class="type-box clothes_click" id="lux_11">
+        <div class="bg">
+            <img alt="爱趣洗" src="imgs/clothes-tag-1459308478585.png">
+        </div>
+        <div class="lux_txt">
+            <p class="big-type">配饰</p>
+            <p class="small-type prices-line">
+                <span>领带</span>
+                <span class="shu-line"></span>
+                <span>帽子</span>
+                <span class="shu-line"></span>
+                <span>围巾</span>
+                <span class="shu-line"></span>
+                <span>披肩</span>
+                <span class="shu-line"></span>
+                <span>毛领</span>
+            </p>
+        </div>
+    </div>
+
+    <div class="space-box-60px"></div>
+
+</section>
+
+<!-- <div class="btn_yuyue" id="orderlink">
+    <a class="order-link" href="#">预约奢护管家</a>
+</div> -->
+
+<script>
+
+        $(".clothes_click").click(function () {
+          api.openWin({
+              name: $(this).attr("id"),
+              url: 'detail/clothes/'+$(this).attr("id")+'.html',
+          });
+        })
+
+</script>
+</body>
+</html>

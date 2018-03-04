@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <title>编辑地址</title>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/common.js"></script>
+</head>
+<body>
+<script>
+    
+  var token= window.base.getLocalStorage("token")
+    if(token==undefined){
+        window.location.href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxb4aa8e6e4549309d&redirect_uri=https%3A%2F%2Fwww.aiquxi.net%2Fapptest&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect"
+    }
+</script>
+<div id="head" class="container">
+    <h3>添加地址</h3>
+</div>
+
+<div class="total-box" style="margin: 20px">
+
+
+
+        <div class="input-group full-width">
+            <span class="input-group-addon special">姓&nbsp &nbsp &nbsp &nbsp名</span>
+            <input name="name" id="name" type="text" class="form-control" required >
+        </div>
+        <br>
+        <div class="input-group full-width">
+            <span class="input-group-addon special">联系电话</span>
+            <input name="mobile" id="mobile" type="number" class="form-control" required >
+        </div>
+        <br>
+
+            <div class="input-group">
+                <span class="input-group-addon ">城&nbsp &nbsp &nbsp &nbsp市</span>
+                <select id="city" class="form-control">
+                    <option value="天津市">天津市</option>
+                </select>
+            </div>
+<br>
+            <div class="input-group">
+                <span class="input-group-addon ">区&nbsp &nbsp &nbsp &nbsp县</span>
+                <select id="county" class="form-control">
+                    <option value="红桥区">红桥区</option>
+                    <option value="北辰区">北辰区</option>
+                    <option value="南开区">南开区</option>
+                    <option value="和平区">和平区</option>
+                    <option value="河西区">河西区</option>
+                    <option value="河东区">河东区</option>
+                    <option value="河北区">河北区</option>
+                </select>
+            </div>
+
+    <br>
+        <div class="input-group full-width">
+            <span class="input-group-addon special">详细地址</span>
+            <textarea name="detail" id="detail" type="text" class="form-control" required ></textarea>
+        </div>
+        <br>
+        <a id="boty" onclick="admit()" class="btn btn-success " >提交</a>
+
+    </div>
+
+<script>
+
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]); return null;
+    }
+    var from=getQueryString("from")
+    var url
+    if(from){
+       url="?from=order"
+    }
+    function  admit(){
+        var submit_data = {name: $.trim($("#name").val()), mobile: $.trim($("#mobile").val()),city: $.trim($("#city").val()),county: $.trim($("#county").val()),detail: $.trim($("#detail").val())};
+        submit_data= JSON.stringify(submit_data)
+        console.log(submit_data);
+        var params={
+            url:'api/userAddress/address/new',
+            type:'post',
+            data:submit_data,
+            data_type:true,
+            tokenFlag:true,
+            sCallback:function(res){
+             //   alert(res)
+                if(res.msg=="ok"){
+                    if(url){
+                        window.location.href="address.html"+url
+                    }else {
+                        window.location.href="address.html"
+                    }
+                }else{
+                    alert(res.msg)
+                   // location.reload(true)
+                }
+            },
+            eCallback:function(e){
+                //  alert(e)
+            }
+        };
+        window.base.getData(params);
+    }
+</script>
+</body>
+</html>
