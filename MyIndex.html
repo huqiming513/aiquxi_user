@@ -265,6 +265,8 @@
                     lat: ret.lat
                 }, function(ret2, err2) {
                     if (ret2.status) {
+                        localStorage.GPSAddress = ret2.address;
+                        console.log(localStorage.GPSAddress);
                         localStorage.GPSCity = ret2.city.replace(/市/, ""); //去除末尾的市
                         if (localStorage.currentCity == "undefined") { //如果当前还没有设置城市，则直接设置为定位城市
                             localStorage.currentCity = localStorage.GPSCity;
