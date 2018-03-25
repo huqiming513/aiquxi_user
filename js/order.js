@@ -1,8 +1,12 @@
 /**
  * Created by Administrator on 2017/12/19 0019.
  */
+// window.base.setLocalStorage("account","");
+// window.base.setLocalStorage("token","")
 var account = window.base.getLocalStorage("account");
-var token = window.base.getLocalStorage("token")
+var token = window.base.getLocalStorage("token");
+console.log(account);
+console.log(token);
 if ((account =="")&&(token =="")){
 //提示登录
     var wapContent = template("nologin");
@@ -63,7 +67,7 @@ function cancel(id) {
 
 }
 function getnewdata() {
-    
+
 }
 
 
@@ -81,6 +85,6 @@ window.onscroll = function (){
         marginBot=J-I-K;
     }
     if(marginBot<=0) {
-       
+
     }
 }

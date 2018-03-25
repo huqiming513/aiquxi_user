@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,initial-scale=1.0,width=device-width" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>奢护管家</title>
+    <link rel="stylesheet" type="text/css" href="./css/api.css" />
+    <link rel="stylesheet" href="css/luxury.css">
+    <style type="text/css">
+        html,
+        body {
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="price-tab">
+        <div class="tab-title" id="tab">
+
+            <a href="" name="0">
+                <span class="select-category" id="leather">奢侈品养护</span>
+            </a>
+
+            <a href="" name="1">
+                <span class="select-category" id="clothes">高端成衣家纺</span>
+            </a>
+
+        </div>
+    </section>
+
+</body>
+<script type="text/javascript" src="./script/api.js"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+    apiready = function() {
+
+        var header = $api.dom('.price-tab'); // 获取 header 标签元素
+        var headerH = $api.fixStatusBar(header);
+
+        var indexNum = 0;
+        if (api.pageParam.name == 'leather') indexNum = 0; // 通过api.pageParam获取openWin()传输的pageParam Json对象
+        else indexNum = 1;
+        api.openFrameGroup({
+            name: 'group1',
+            background: '#fff',
+            scrollEnabled: true,
+            rect: {
+                marginTop: headerH+2, // main页面距离win顶部的高度
+                marginBottom: 0, // main页面距离win底部的高度
+                w: 'auto' // main页面的宽度 自适应屏幕宽度
+            },
+            index: indexNum,
+            frames: [{
+                name: 'leather',
+                url: 'leather.html',
+                bgColor: '#fff'
+            }, {
+                name: 'clothes',
+                url: 'clothes.html',
+                bgColor: '#fff'
+            }]
+        }, function(ret, err) {
+            if (ret) {
+                if (ret.name === 'leather') {
+                    $('#leather').addClass("checked-tab");
+                    $('#clothes').removeClass("checked-tab");
+                } else {
+                    $('#clothes').addClass("checked-tab");
+                    $('#leather').removeClass("checked-tab");
+                }
+            }
+        });
+        api.openFrame({
+            name: 'footer',
+            url: 'footer.html',
+            rect: {
+                x: 0,
+                y: api.frameHeight - 90,
+                w: 'auto',
+                h: '90px'
+            },
+            pageParam: {
+                name: 'test'
+            },
+            bounces: true,
+            bgColor: 'rgba(0,0,0,0)',
+            vScrollBarEnabled: false,
+            hScrollBarEnabled: false,
+            bounces:false
+        });
+
+        $("#tab a").on("click", function(e) {
+            api.setFrameGroupIndex({
+                name: 'group1',
+                index: $(this).attr("name"),
+                scroll:true  //滑动切换frame
+            });
+        });
+
+    };
+</script>
+
+</html>

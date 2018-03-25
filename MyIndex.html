@@ -55,7 +55,7 @@
 
         <!--用户所在服务区域-->
         <div class="location">
-            <a class="city">天津<span class="em"></span></a>
+            <a class="city"><span class="em"></span></a>
         </div>
 
         <!--洗衣类别-->
@@ -114,13 +114,14 @@
             <div class="border_b"></div>
             <div class="luxury_block">
                 <div data-link="category.html?category_id=4">
+                    <!-- TODO: 为什么只在这里设置了-->
                     <span class="luxury_text_left"> 奢侈品养护</span>
                 </div>
                 <div data-link="">
-                    <img class="luxury_open" src="http://iquxi.oss-cn-shanghai.aliyuncs.com/img/shechipin.png" id="leather">
+                    <img class="luxury_open" src="http://iquxi.oss-cn-shanghai.aliyuncs.com/img/shechipin.png" name="leather">
                 </div>
                 <div>
-                    <img class="luxury_open" src="http://iquxi.oss-cn-shanghai.aliyuncs.com/img/jiafang.png" id="clothes">
+                    <img class="luxury_open" src="http://iquxi.oss-cn-shanghai.aliyuncs.com/img/jiafang.png" name="clothes">
                 </div>
                 <div>
                     <span class="luxury_text_right">高端成衣家纺</span>
@@ -240,58 +241,127 @@
         </footer>
     </div>
 </body>
-
+<script type="text/javascript" src="./script/api.js"></script>
 <script>
-    $('.luxury_open').on('click', function(e) {
-      var indexNum = 0;
-      if($(this).attr("id") == 'leather') indexNum = 0;
-      else indexNum = 1;
-      api.openFrameGroup ({
-          name: 'group1',
-          background: '#fff',
-          scrollEnabled: true,
-          rect: {
-               x: 0,
-               y: 0,
-               w: 'auto',
-               h: 'auto'
-          },
-          index: indexNum,
-          frames: [{
-              name: 'leather',
-              url:  'leather.html',
-              bgColor: '#fff'
-          },{
-              name: 'clothes',
-              url:  'clothes.html',
-              bgColor: '#fff'
-          }]
-      }, function(ret, err){
-          if( ret ){
-              //  alert( JSON.stringify( ret ) );
-          }else{
-              //  alert( JSON.stringify( err ) );
-          }
-      });
-      api.openFrame({
-          name: 'footer',
-          url: 'footer.html',
-          rect: {
-              x: 0,
-              y: api.frameHeight-90,
-              w: 'auto',
-              h: '90px'
-          },
-          pageParam: {
-              name: 'test'
-          },
-          bounces: true,
-          bgColor: 'rgba(0,0,0,0)',
-          vScrollBarEnabled: false,
-          hScrollBarEnabled: false
-      });
+    var UICityList; //使用城市列表模块
+    var baiduMap; //使用百度地图模块
+    if (localStorage.currentCity != "undefined") //如果本地已经存储了当前城市，那么直接设置城市栏
+    {
+        $('.city').html(localStorage.currentCity + "<span class=\"em\"></span>");
+    }
 
-    })
+    apiready = function() {
+        UICityList = api.require("UICityList");
+        baiduMap = api.require('bMap');
+        baiduMap.getLocation({
+            accuracy: '10m',
+            filter: 1,
+            autoStop: true
+        }, function(ret, err) {
+            if (ret.status) {
+                //console.log(JSON.stringify(ret));   //获取经纬度
+                baiduMap.getNameFromCoords({
+                    lon: ret.lon,
+                    lat: ret.lat
+                }, function(ret2, err2) {
+                    if (ret2.status) {
+                        localStorage.GPSCity = ret2.city.replace(/市/, ""); //去除末尾的市
+                        if (localStorage.currentCity == "undefined") { //如果当前还没有设置城市，则直接设置为定位城市
+                            localStorage.currentCity = localStorage.GPSCity;
+                            $('.city').html(localStorage.currentCity + "<span class=\"em\"></span>");
+                        }
+                        if (localStorage.currentCity != localStorage.GPSCity) {
+                            if (confirm("当前所选城市与定位城市不一致，是否切换到定位城市？")) {
+                                localStorage.currentCity = localStorage.GPSCity;
+                                $('.city').html(localStorage.currentCity + "<span class=\"em\"></span>");
+                            }
+                        }
+
+                    }
+                });
+            } else {
+                //alert(JSON.stringify(err));
+            }
+        });
+    }
+
+    function fnClose() {
+        UICityList.close();
+    }
+
+    function fnShow() {
+        UICityList.show();
+    }
+
+    function fnHide() {
+        UICityList.hide();
+    }
+
+    function fnOpen() {
+        UICityList.open({
+            rect: {
+                x: 0,
+                y: 0,
+                w: api.winWidth,
+                h: api.winHeight
+            },
+            resource: 'widget://res/UICityList.json',
+            styles: {
+                searchBar: {
+                    bgColor: '#E8E8E8',
+                    cancColor: '#E3E3E3'
+                },
+                location: {
+                    color: '#7AC5CD',
+                },
+                sectionTitle: {
+                    bgColor: '#FFFFFF',
+                },
+                item: {
+                    bgColor: '#FFFFFF',
+                },
+                indicator: {
+                    bgColor: '#FFFFFF',
+                }
+            },
+            currentCity: localStorage.GPSCity, //GPS定位城市设置为定位城市
+        }, function(ret, err) {
+            if (ret) {
+                if (ret.eventType == 'selected') {
+                    localStorage.currentCity = ret.cityInfo.city;
+                    localStorage.currentCityId = ret.cityInfo.id;
+                    $('.city').html(localStorage.currentCity + "<span class=\"em\"></span>");
+                    UICityList.close();
+                }
+            } else {
+                //  alert(JSON.stringify(err));
+            }
+        });
+    }
+    $('.location').click(fnOpen);
+    $('.luxury_open').on('click', function(e) {
+        api.openWin({
+            name: 'MyNewIndex',
+            url: 'MyNewIndex.html',
+            rect: {
+                x: 0,
+                y: 0,
+                w: 'auto',
+                h: 'auto'
+
+            },
+            pageParam: {
+                name: $(this).attr("name")
+            },
+            bounces: true,
+            bgColor: 'rgba(255,255,255,1)',
+            vScrollBarEnabled: true,
+            hScrollBarEnabled: true,
+            bounces:false
+        });
+
+
+    });
     var mySwiper = new Swiper('.swiper-container', {
         pagination: '.pagination',
         loop: true,

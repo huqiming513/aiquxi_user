@@ -2,18 +2,20 @@
     margin: 0;
     padding: 0;
     outline: none;
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-html,
-body {
+
+html, body {
     font-size: 14px;
     height: 100%;
     background: #FFFFFF;
 }
-a{
+
+a {
     text-decoration: none;
 }
-.price-tab{
+
+.price-tab {
     font-size: 1.0rem;
     position: fixed;
     top: 0;
@@ -22,67 +24,87 @@ a{
     background: #fff;
     left: 0;
 }
-.tab-title{
-    line-height: 3.6rem;
+
+.tab-title {
+    line-height: 2rem;
     text-align: center;
     display: block;
     border-bottom: 1px solid #dcdcdc;
 }
-.tab-title a{
+
+.tab-title a {
+    top: 45%;
+    position: relative;
+    transform: translateY(-30%);
     text-decoration: none;
     color: #3e3e3e;
 }
-.tab-title span{
+
+.tab-title span {
     display: inline-block;
     margin: 0 10px;
     padding: 0 10px;
 }
-.checked-tab{
+
+.checked-tab {
     border-bottom: 2px solid #6A5345;
     color: #6A5345;
 }
-.space-box-3d6rem{
+
+.select-category {
+    font-size: 1.025rem;
+}
+
+.space-box-3d6rem {
     width: 100%;
     height: 3.6rem;
 }
-.space-box-60px{
+
+.space-box-60px {
     width: 100%;
     height: 60px;
 }
-.type-box{
+
+.type-box {
     margin: 1% 2%;
     position: relative;
 }
 
-.bg img{
+.bg img {
     width: 100%;
 }
-.lux_txt{
+
+.lux_txt {
     position: absolute;
-    background: rgba(255,255,255,0);
+    background: rgba(255, 255, 255, 0);
     top: 28%;
     left: 8%;
     color: #382D29;
     line-height: 26px;
     width: 82%;
 }
-.big-type{
+
+.big-type {
     font-size: 1.0rem;
 }
-.small-type{
+
+.small-type {
     font-size: 0.725rem;
 }
-.prices-line{
+
+.prices-line {
     line-height: 24px;
     width: 84%;
 }
-.shu-line{
+
+.shu-line {
     border-left: 1px solid #bbb;
     height: 8px;
     display: inline-block;
     margin: 0 4px;
 }
-.btn_yuyue{
+
+.btn_yuyue {
     padding: 4%;
     left: 0;
     position: fixed;
@@ -90,10 +112,11 @@ a{
     width: 92%;
     border-top: 1px solid #eee;
     text-align: center;
-    background: rgba(255,255,255,0.5);
+    background: rgba(255, 255, 255, 0.5);
     display: block;
 }
-.order-link{
+
+.order-link {
     text-decoration: none;
     background: #382D29;
     display: inline-block;
