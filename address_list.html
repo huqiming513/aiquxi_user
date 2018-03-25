@@ -8,9 +8,10 @@
     <link rel="stylesheet" type="text/css" href="css/api.css" />
     <link rel="stylesheet" type="text/css" href="css/aui.css" />
     <style>
-        html,body {
-          background: #FFF;
-          height: 100%;
+        html,
+        body {
+            background: #FFF;
+            height: 100%;
         }
     </style>
 </head>
@@ -21,9 +22,9 @@
         <div class="aui-pull-left aui-btn">
             <span class="aui-iconfont aui-icon-left"></span>
         </div>
-        <div class="aui-title" style="left:2rem; right: 0.5rem;" >
+        <div class="aui-title" style="left:2rem; right: 0.5rem;">
             <div class="aui-searchbar" style="background:#FFF;">
-                <div class="aui-searchbar-input aui-border-radius"style="background:#F5F5F5;">
+                <div class="aui-searchbar-input aui-border-radius" style="background:#F5F5F5;">
                     <i class="aui-iconfont aui-icon-search"></i>
                     <input type="search" placeholder="请输入搜索内容" id="search-input">
                     <div class="aui-searchbar-clear-btn">
@@ -35,12 +36,44 @@
         </div>
     </header>
 
+    <ul class="aui-list aui-list-in">
+    </ul>
 
 </body>
+<script src="js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="script/api.js"></script>
 <script type="text/javascript">
-    apiready = function() {
+    function add_item(str,index) {
+        return "<li class=\"aui-list-item\" name='"+index+"'><div class=\"aui-list-item-inner\"><div class=\"aui-list-item-title\">" + str + "</div></div></li>";
+    }
 
+    function func(item,index) { //当前元素，当前元素索引，当前元素所属数组
+        $(".aui-list-in").append(add_item(item.name,index));
+    }
+    apiready = function() {
+        var myresults;
+        $("#search-input").on("change", function(e) {
+            $(".aui-list-in").children().remove();
+            var str = $("#search-input").val();
+            var map = api.require('bMap');
+            map.searchInCity({
+                city: localStorage.GPSCity,
+                keyword: str,
+                pageIndex: 0,
+                pageCapacity: 20
+            }, function(ret, err) {
+                if (ret.status) {
+                    myresults = ret.results;
+                    ret.results.forEach(func);
+                } 
+            });
+        });
+
+
+        $(".aui-list").on("click",".aui-list-item",function(e){
+          var index = $(this).attr("name");
+          alert(JSON.stringify(myresults[index]));
+        });
     };
 </script>
 
